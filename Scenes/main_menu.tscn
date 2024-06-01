@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1ycb4gducicl"]
+[gd_scene load_steps=12 format=3 uid="uid://d1ycb4gducicl"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_7kwcp"]
 [ext_resource type="Texture2D" uid="uid://b83nvrlcyp0e0" path="res://Sprites/bg_main_menu.png" id="2_2c2my"]
@@ -8,6 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://clpphyrise2kd" path="res://Sprites/btn_settings_2.png" id="6_wwvi1"]
 [ext_resource type="Texture2D" uid="uid://cwckd1cl34l0c" path="res://Sprites/btn_quit_1.png" id="7_sfrij"]
 [ext_resource type="Texture2D" uid="uid://c5n5halqrb4r6" path="res://Sprites/btn_quit_2.png" id="8_nh8dh"]
+[ext_resource type="FontFile" uid="uid://dgptphts8sush" path="res://Fonts/Amarante-Regular.ttf" id="9_xu0xn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3feea"]
+font = ExtResource("9_xu0xn")
+font_size = 150
+font_color = Color(0.788235, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjw6d"]
+font = ExtResource("9_xu0xn")
+font_size = 75
+font_color = Color(0.788235, 0, 0, 1)
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -58,31 +69,35 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("8_nh8dh")
 texture_hover = ExtResource("7_sfrij")
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -746.0
-offset_top = 52.0
-offset_right = -271.0
-offset_bottom = 170.0
-grow_horizontal = 0
-scale = Vector2(0.710148, 0.697809)
-
-[node name="Title" type="VBoxContainer" parent="MarginContainer2"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
-alignment = 1
+offset_left = 440.0
+offset_top = 51.0
+offset_right = 684.0
+offset_bottom = 239.0
+grow_horizontal = 2
+text = "SAV"
+label_settings = SubResource("LabelSettings_3feea")
 
-[node name="Title" type="TextureButton" parent="MarginContainer2/Title"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("4_krcwk")
-texture_hover = ExtResource("3_6manm")
+[node name="Label2" type="Label" parent="Label"]
+offset_left = 242.0
+offset_top = 76.0
+offset_right = 299.0
+offset_bottom = 202.0
+text = "A"
+label_settings = SubResource("LabelSettings_vjw6d")
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 16.0
+offset_right = 295.0
+offset_bottom = 142.0
+text = "E"
+label_settings = SubResource("LabelSettings_vjw6d")
 
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Play Game" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settings" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="MarginContainer2/Title/Title" to="." method="_on_play_game_pressed"]
