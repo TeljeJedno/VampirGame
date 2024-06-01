@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://covrk6svmr1se"]
+[gd_scene load_steps=7 format=3 uid="uid://covrk6svmr1se"]
 
 [ext_resource type="Script" path="res://Scripts/player_scr.gd" id="1_2xwux"]
 [ext_resource type="Texture2D" uid="uid://cvllu06gmardm" path="res://Sprites/blueCoin.png" id="2_hj74p"]
@@ -21,6 +21,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_74moy"]
 radius = 15.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1asj"]
+size = Vector2(80, 40)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2xwux")
 
@@ -39,4 +42,11 @@ debug_color = Color(0.994522, 0, 0.220714, 0.42)
 wait_time = 0.5
 one_shot = true
 
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_h1asj")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_area_2d_body_entered"]
