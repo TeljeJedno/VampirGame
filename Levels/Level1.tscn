@@ -11,6 +11,8 @@ position = Vector2(574, 283)
 [node name="Player" parent="." instance=ExtResource("1_ht775")]
 position = Vector2(0, -114)
 
+[node name="Timer" type="Timer" parent="Player"]
+
 [node name="Solid" parent="." instance=ExtResource("2_vrwvb")]
 position = Vector2(-23, 15)
 
