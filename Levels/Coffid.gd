@@ -14,6 +14,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		TransitionLayer.changeScene("res://Levels/Level1.tscn","1")
+		TransitionLayer.changeScene("res://Levels/Level1.tscn","2")
 		
 		
