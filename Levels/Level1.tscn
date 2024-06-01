@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://pva8ue61sokt"]
+[gd_scene load_steps=5 format=3 uid="uid://pva8ue61sokt"]
 
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ht775"]
 [ext_resource type="PackedScene" uid="uid://m4kmvlcpgjvf" path="res://Objects/solid.tscn" id="2_vrwvb"]
+[ext_resource type="PackedScene" uid="uid://dbqk7hw2yhhau" path="res://Enemies/peasant.tscn" id="3_kt324"]
+[ext_resource type="PackedScene" uid="uid://c1ph5cok74t23" path="res://Enemies/knight.tscn" id="4_sgml4"]
 
 [node name="level_1" type="Node2D"]
 position = Vector2(574, 283)
@@ -19,3 +21,9 @@ position = Vector2(7, 15)
 
 [node name="Solid3" parent="." instance=ExtResource("2_vrwvb")]
 position = Vector2(37, 15)
+
+[node name="Peasant" parent="." instance=ExtResource("3_kt324")]
+position = Vector2(-81, -67)
+
+[node name="Knight" parent="." instance=ExtResource("4_sgml4")]
+position = Vector2(-64, -22)
