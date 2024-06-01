@@ -14,7 +14,6 @@ var bodies = []
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
-	print(dash)
 	if is_on_floor():
 		jump_charges = 2
 		
@@ -39,7 +38,6 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("dash"):			
 			action_timer.start()
 			dash = true;
-			
 		if dash == true:
 			velocity.x = direction * SPEED * 5
 		else:	
@@ -50,7 +48,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_timer_timeout():
-	print(action_timer.time_left)
 	dash = false
 	
 func change_hp (h):
