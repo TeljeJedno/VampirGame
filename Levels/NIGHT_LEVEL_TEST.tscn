@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh5s0fexk152g"]
+[gd_scene load_steps=8 format=3 uid="uid://dnn2g3g3171nw"]
 
-[ext_resource type="Texture2D" path="res://Sprites/bg_1.png" id="1_qdk4e"]
+[ext_resource type="Texture2D" uid="uid://fomxhto4qrck" path="res://Sprites/bg_1.png" id="1_qdk4e"]
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="2_240iw"]
-[ext_resource type="Texture2D" path="res://Sprites/Sprite-Coffin.png" id="3_js2gp"]
+[ext_resource type="Texture2D" uid="uid://cgwj4xp46txt" path="res://Sprites/Sprite-Coffin.png" id="3_js2gp"]
 [ext_resource type="Script" path="res://Levels/Coffid.gd" id="4_dovg6"]
+[ext_resource type="PackedScene" uid="uid://c1ph5cok74t23" path="res://Enemies/knight.tscn" id="5_xpahk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mh5h"]
 
@@ -40,5 +41,8 @@ script = ExtResource("4_dovg6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite-coffin/Area2d"]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_v8lqa")
+
+[node name="Knight" parent="." instance=ExtResource("5_xpahk")]
+position = Vector2(-242, 642)
 
 [connection signal="body_entered" from="Sprite-coffin/Area2d" to="Sprite-coffin/Area2d" method="_on_body_entered"]
