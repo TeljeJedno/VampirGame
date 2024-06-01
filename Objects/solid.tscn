@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://m4kmvlcpgjvf"]
+
+[ext_resource type="Texture2D" uid="uid://mco1lyi3bfeg" path="res://Sprites/greenCoin.png" id="1_so7gd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3641"]
+size = Vector2(30, 30)
+
+[node name="Solid" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_so7gd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k3641")
+debug_color = Color(3.08037e-06, 0.592418, 0.741679, 0.42)
