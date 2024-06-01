@@ -36,7 +36,7 @@ func _physics_process(delta):
 	
 	if direction:	
 		#Handle dash
-		if Input.is_key_pressed(KEY_SHIFT):			
+		if Input.is_action_just_pressed("dash"):			
 			action_timer.start()
 			dash = true;
 			
