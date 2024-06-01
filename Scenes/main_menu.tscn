@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1ycb4gducicl"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_7kwcp"]
+[ext_resource type="Texture2D" uid="uid://b83nvrlcyp0e0" path="res://Sprites/bg_main_menu.png" id="2_2c2my"]
+[ext_resource type="Texture2D" uid="uid://bdef4fco4wxer" path="res://Sprites/btn_play_1.png" id="3_6manm"]
+[ext_resource type="Texture2D" uid="uid://dc3rq1yenrmon" path="res://Sprites/btn_play_2.png" id="4_krcwk"]
+[ext_resource type="Texture2D" uid="uid://g7pyhi6m5ewj" path="res://Sprites/btn_settings_1.png" id="5_1lbln"]
+[ext_resource type="Texture2D" uid="uid://clpphyrise2kd" path="res://Sprites/btn_settings_2.png" id="6_wwvi1"]
+[ext_resource type="Texture2D" uid="uid://cwckd1cl34l0c" path="res://Sprites/btn_quit_1.png" id="7_sfrij"]
+[ext_resource type="Texture2D" uid="uid://c5n5halqrb4r6" path="res://Sprites/btn_quit_2.png" id="8_nh8dh"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7kwcp")
+
+[node name="BgMainMenu" type="Sprite2D" parent="."]
+position = Vector2(572, 317)
+scale = Vector2(0.615006, 0.603674)
+texture = ExtResource("2_2c2my")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 180.0
+offset_top = 147.0
+offset_right = 180.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.710148, 0.697809)
+
+[node name="Buttons MainMenu" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Play Game" type="TextureButton" parent="MarginContainer/Buttons MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_krcwk")
+texture_hover = ExtResource("3_6manm")
+
+[node name="Settings" type="TextureButton" parent="MarginContainer/Buttons MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_wwvi1")
+texture_hover = ExtResource("5_1lbln")
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/Buttons MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("8_nh8dh")
+texture_hover = ExtResource("7_sfrij")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -746.0
+offset_top = 52.0
+offset_right = -271.0
+offset_bottom = 170.0
+grow_horizontal = 0
+scale = Vector2(0.710148, 0.697809)
+
+[node name="Title" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="TextureButton" parent="MarginContainer2/Title"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_krcwk")
+texture_hover = ExtResource("3_6manm")
+
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Play Game" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settings" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="MarginContainer2/Title/Title" to="." method="_on_play_game_pressed"]
