@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://kiah222fg8nt"]
+[gd_scene load_steps=8 format=3 uid="uid://74cdc4emntpu"]
 
 [ext_resource type="FontFile" uid="uid://dgptphts8sush" path="res://Fonts/Amarante-Regular.ttf" id="1_4xhlt"]
 [ext_resource type="Script" path="res://Scripts/transition_layer.gd" id="1_nubcm"]
@@ -39,9 +39,26 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_a7ip5"]
+resource_name = "dissapear"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kd80o"]
 _data = {
 "RESET": SubResource("Animation_cabfa"),
+"dissapear": SubResource("Animation_a7ip5"),
 "fade": SubResource("Animation_phjo7")
 }
 
@@ -74,4 +91,3 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_kd80o")
 }
-autoplay = "fade"
