@@ -43,9 +43,9 @@ func _on_behaviour_timer_timeout():
 
 
 func _on_agro_area_body_entered(body):
+	print(body.name)
 	if body.name == "Player":
 		print("CHASING")
 		behaviour = BEHAVIOURS.CHASE
-		move_dir = body.position.x - position.x
 		behaviour_timer.stop()
 	pass # Replace with function body.
