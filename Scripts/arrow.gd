@@ -17,3 +17,10 @@ func _process(delta):
 	
 	path_follow_2d.progress += speed * delta
 	pass
+
+
+
+func _on_area_2d_body_entered(body):
+	match body.name:
+		"Player":
+			body.change_hp(-15)
