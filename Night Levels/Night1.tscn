@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://cco2yi8wu4isa"]
+
+[ext_resource type="Texture2D" uid="uid://i65sksykkmj" path="res://Night Levels/Night top color.png" id="1_knoj5"]
+[ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ryalo"]
+[ext_resource type="Texture2D" uid="uid://cgwj4xp46txt" path="res://Sprites/Sprite-Coffin.png" id="2_x8y2i"]
+[ext_resource type="Script" path="res://Levels/Coffid.gd" id="3_t2kwc"]
+[ext_resource type="Texture2D" uid="uid://dhdp5qh53wrvu" path="res://Sprites/night_bg.png" id="7_8s0fw"]
+[ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="8_o63xn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8lqa"]
+size = Vector2(92, 144)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_im26i"]
+
+[node name="main" type="Node2D"]
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="NightTopColor" type="Sprite2D" parent="BG"]
+position = Vector2(-1108.5, -627)
+scale = Vector2(176.891, 16.2187)
+texture = ExtResource("1_knoj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="BG"]
+position = Vector2(-4878, 475)
+texture = ExtResource("7_8s0fw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BG"]
+position = Vector2(-1099, 475)
+scale = Vector2(-1, 1)
+texture = ExtResource("7_8s0fw")
+
+[node name="Sprite2D3" type="Sprite2D" parent="BG"]
+position = Vector2(2666, 475)
+texture = ExtResource("7_8s0fw")
+
+[node name="Player" parent="." instance=ExtResource("1_ryalo")]
+position = Vector2(-5521, 645)
+
+[node name="Sprite-coffin" type="Sprite2D" parent="."]
+position = Vector2(2194, 735)
+texture = ExtResource("2_x8y2i")
+
+[node name="Area2d" type="Area2D" parent="Sprite-coffin"]
+script = ExtResource("3_t2kwc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite-coffin/Area2d"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_v8lqa")
+
+[node name="LevelBounds" type="StaticBody2D" parent="."]
+position = Vector2(-701.5, 656)
+
+[node name="Bot" type="CollisionShape2D" parent="LevelBounds"]
+position = Vector2(0, 90)
+shape = SubResource("WorldBoundaryShape2D_im26i")
+
+[node name="Left" type="CollisionShape2D" parent="LevelBounds"]
+position = Vector2(-5000, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_im26i")
+
+[node name="Right" type="CollisionShape2D" parent="LevelBounds"]
+position = Vector2(3000, 0)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_im26i")
+
+[node name="StaticBody2D" parent="LevelBounds" instance=ExtResource("8_o63xn")]
+position = Vector2(-5014.5, -292)
+rotation = 1.5708
+scale = Vector2(6, 1)
+
+[node name="StaticBody2D2" parent="LevelBounds" instance=ExtResource("8_o63xn")]
+position = Vector2(3024.5, -292)
+rotation = 1.5708
+scale = Vector2(6, 1)
+
+[connection signal="body_entered" from="Sprite-coffin/Area2d" to="Sprite-coffin/Area2d" method="_on_body_entered"]

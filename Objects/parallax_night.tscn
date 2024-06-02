@@ -30,7 +30,7 @@ position = Vector2(450, 0)
 texture = ExtResource("3_yt1k2")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-position = Vector2(296, -381)
+position = Vector2(296, -380)
 motion_scale = Vector2(0.05, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
@@ -42,9 +42,9 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = -162.0
 offset_top = -162.0
-offset_right = 177.0
-offset_bottom = 177.0
+offset_right = 162.0
+offset_bottom = 162.0
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3/Sprite2D/Control"]
-position = Vector2(170, 162)
+position = Vector2(162, 162)
 texture = ExtResource("5_01len")
