@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbqk7hw2yhhau"]
 
 [ext_resource type="Script" path="res://Scripts/peasant_scr.gd" id="1_i4uwe"]
-[ext_resource type="Texture2D" uid="uid://c13d0knjdlbcm" path="res://Sprites/redCoin.png" id="2_lvd2m"]
+[ext_resource type="Texture2D" uid="uid://dwd0c5iiiqjp3" path="res://Sprites/peasant copy.png" id="2_ysahv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rfmg5"]
-atlas = ExtResource("2_lvd2m")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykl4k"]
+atlas = ExtResource("2_ysahv")
+region = Rect2(0, 0, 82, 198)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s8wno"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rfmg5")
+"texture": SubResource("AtlasTexture_ykl4k")
 }],
 "loop": true,
 "name": &"default",

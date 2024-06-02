@@ -1,28 +1,28 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1ph5cok74t23"]
 
 [ext_resource type="Script" path="res://Scripts/knight_scr.gd" id="1_7ava8"]
-[ext_resource type="Texture2D" uid="uid://ygf203yvudwu" path="res://Sprites/grayCoin.png" id="2_5r8ig"]
+[ext_resource type="Texture2D" uid="uid://eqgq3qbnj332" path="res://Sprites/knight copy.png" id="2_rqvkd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hn3ft"]
-atlas = ExtResource("2_5r8ig")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm7at"]
+atlas = ExtResource("2_rqvkd")
+region = Rect2(0, 0, 161, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s8wno"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hn3ft")
+"texture": SubResource("AtlasTexture_dm7at")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gyv0p"]
-radius = 59.14
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fanb2"]
+size = Vector2(1000, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckk8m"]
-size = Vector2(60, 20)
+size = Vector2(200, 146)
 
 [node name="Knight" type="Node2D"]
 script = ExtResource("1_7ava8")
@@ -36,17 +36,20 @@ wait_time = 2.0
 [node name="AgroArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AgroArea"]
-shape = SubResource("CircleShape2D_gyv0p")
+position = Vector2(33, 0)
+shape = SubResource("RectangleShape2D_fanb2")
 
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(-40, 0)
 shape = SubResource("RectangleShape2D_ckk8m")
 debug_color = Color(0.997531, 0, 0.163863, 0.42)
 
 [node name="DamageArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(-40, 0)
 shape = SubResource("RectangleShape2D_ckk8m")
 disabled = true
 debug_color = Color(0.997531, 0, 0.163863, 0.42)

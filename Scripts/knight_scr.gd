@@ -5,17 +5,18 @@ var behaviour = BEHAVIOURS.IDLE
 var behaviourTimer = 2
 @onready var behaviour_timer = $BehaviourTimer
 
-var move_spd_base = 1
-var move_spd = 1
+var move_spd_base = 100
+var move_spd = 30
 var move_dir = 0
 
 
 var originPos
 var target: CharacterBody2D
-var moveDist = 200
+var moveDist = 600
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	move_spd = move_spd_base
 	originPos = position
 	behaviour_timer.start(behaviourTimer + randf_range(-1, 1))
 	pass # Replace with function body.
@@ -25,7 +26,7 @@ func _process(delta):
 	if behaviour == BEHAVIOURS.CHASE: 
 		move_dir = sign(target.position.x - position.x)
 			
-	if behaviour == BEHAVIOURS.RETURNING: if abs(position.x - originPos.x) < move_spd :
+	if behaviour == BEHAVIOURS.RETURNING: if abs(position.x - originPos.x) < 2 :
 		behaviour = BEHAVIOURS.IDLE
 		move_dir = 0
 		behaviour_timer.start(behaviourTimer + randf_range(-1, 1)) 
@@ -35,8 +36,9 @@ func _process(delta):
 		behaviour  = BEHAVIOURS.RETURNING
 		move_dir = sign(originPos.x - position.x)
 	
-	position.x += move_dir * move_spd
 
+func _physics_process(delta):
+	position.x += move_dir * move_spd * delta
 	
 func _on_behaviour_timer_timeout():
 	behaviour = randi_range(0, 2)

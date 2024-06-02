@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqs87nicsh8hm"]
 
 [ext_resource type="Script" path="res://Scripts/archer_scr.gd" id="1_2anwo"]
-[ext_resource type="Texture2D" uid="uid://mco1lyi3bfeg" path="res://Sprites/greenCoin.png" id="2_acf5n"]
+[ext_resource type="Texture2D" uid="uid://cg4b7n2yhvref" path="res://Sprites/archer copy.png" id="2_rt4kp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ompbi"]
-atlas = ExtResource("2_acf5n")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e86dr"]
+atlas = ExtResource("2_rt4kp")
+region = Rect2(0, 0, 208, 187)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s8wno"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ompbi")
+"texture": SubResource("AtlasTexture_e86dr")
 }],
 "loop": true,
 "name": &"default",
@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gyv0p"]
-radius = 200.0
+radius = 1000.0
 
 [node name="Archer" type="Node2D"]
 script = ExtResource("1_2anwo")

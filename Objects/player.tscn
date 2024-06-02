@@ -1,28 +1,29 @@
 [gd_scene load_steps=7 format=3 uid="uid://covrk6svmr1se"]
 
 [ext_resource type="Script" path="res://Scripts/player_scr.gd" id="1_2xwux"]
-[ext_resource type="Texture2D" uid="uid://cvllu06gmardm" path="res://Sprites/blueCoin.png" id="2_hj74p"]
+[ext_resource type="Texture2D" uid="uid://b1tyambd2al2r" path="res://Sprites/vampir.png" id="2_3v2oo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmdol"]
-atlas = ExtResource("2_hj74p")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_746e4"]
+atlas = ExtResource("2_3v2oo")
+region = Rect2(0, 0, 123, 250)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r7drm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tmdol")
+"texture": SubResource("AtlasTexture_746e4")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_74moy"]
-radius = 15.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u7ogo"]
+radius = 30.0
+height = 200.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1asj"]
-size = Vector2(80, 40)
+size = Vector2(300, 200)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2xwux")
@@ -32,11 +33,13 @@ position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_r7drm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_74moy")
+shape = SubResource("CapsuleShape2D_u7ogo")
 one_way_collision_margin = 0.0
-debug_color = Color(0.994522, 0, 0.220714, 0.42)
+debug_color = Color(7.60466e-06, 0.586883, 0.770228, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -250)
+zoom = Vector2(0.8, 0.8)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -45,8 +48,8 @@ one_shot = true
 [node name="AttackRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
-position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_h1asj")
+debug_color = Color(0.989781, 0, 0.286363, 0.42)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="AttackRange" to="." method="_on_area_2d_body_entered"]

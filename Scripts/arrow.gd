@@ -1,6 +1,6 @@
 extends Path2D
 
-var speed = 150
+var speed = 700
 var targetPos: Vector2
 @onready var path_follow_2d = $PathFollow2D
 

@@ -5,8 +5,8 @@ var behaviour = BEHAVIOURS.IDLE
 var behaviourTimer = 2
 @onready var behaviour_timer = $BehaviourTimer
 
-var move_spd_base = 1
-var move_spd = 1
+var move_spd_base = 30
+var move_spd = 30
 var move_dir = 0
 
 var originPos
@@ -14,6 +14,7 @@ var moveDist = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	move_spd = move_spd_base
 	originPos = position
 	behaviour_timer.start(behaviourTimer + randf_range(-1, 1))
 	pass # Replace with function body.
@@ -32,7 +33,7 @@ func _process(delta):
 		behaviour  = BEHAVIOURS.RETURNING
 		move_dir = sign(originPos.x - position.x)
 
-	position.x += move_dir * move_spd
+	position.x += move_dir * move_spd * delta
 	
 	
 func _on_behaviour_timer_timeout():
