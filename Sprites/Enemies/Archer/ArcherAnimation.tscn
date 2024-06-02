@@ -16,7 +16,7 @@ resource_name = "Shoot"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton2D/e/LB:position")
+tracks/0/path = NodePath("Skeleton2D/Torso/LB:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,7 +28,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Skeleton2D/e/LB:rotation")
+tracks/1/path = NodePath("Skeleton2D/Torso/LB:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +40,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Skeleton2D/e/LB/LA:position")
+tracks/2/path = NodePath("Skeleton2D/Torso/LB/LA:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -52,7 +52,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Skeleton2D/e/LB/LA:rotation")
+tracks/3/path = NodePath("Skeleton2D/Torso/LB/LA:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -64,7 +64,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Skeleton2D/e:position")
+tracks/4/path = NodePath("Skeleton2D/Torso:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -76,7 +76,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Skeleton2D/e:rotation")
+tracks/5/path = NodePath("Skeleton2D/Torso:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -88,7 +88,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Skeleton2D/e/RB:position")
+tracks/6/path = NodePath("Skeleton2D/Torso/RB:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -100,7 +100,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Skeleton2D/e/RB:rotation")
+tracks/7/path = NodePath("Skeleton2D/Torso/RB:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -115,7 +115,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton2D/e/LB:position")
+tracks/0/path = NodePath("Skeleton2D/Torso/LB:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -127,7 +127,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Skeleton2D/e/LB:rotation")
+tracks/1/path = NodePath("Skeleton2D/Torso/LB:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -139,7 +139,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Skeleton2D/e/LB/LA:position")
+tracks/2/path = NodePath("Skeleton2D/Torso/LB/LA:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -151,7 +151,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Skeleton2D/e/LB/LA:rotation")
+tracks/3/path = NodePath("Skeleton2D/Torso/LB/LA:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -163,7 +163,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Skeleton2D/e:position")
+tracks/4/path = NodePath("Skeleton2D/Torso:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -175,7 +175,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Skeleton2D/e:rotation")
+tracks/5/path = NodePath("Skeleton2D/Torso:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -187,7 +187,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Skeleton2D/e/RB:position")
+tracks/6/path = NodePath("Skeleton2D/Torso/RB:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -199,7 +199,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Skeleton2D/e/RB:rotation")
+tracks/7/path = NodePath("Skeleton2D/Torso/RB:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -298,27 +298,26 @@ polygon = PackedVector2Array(-4.28571, 10.2857, 82.8571, 190.571, 72, 231.714, 8
 uv = PackedVector2Array(-4.28571, 10.2857, 82.8571, 190.571, 72, 231.714, 83.7143, 244.286, 243.714, 241.429, 135.143, 200.571, 83.7143, 37.1429, 71.4286, -4, 48, 9.71428, -3.42857, 2)
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
-position = Vector2(1, 0)
 
-[node name="e" type="Bone2D" parent="Skeleton2D"]
+[node name="Torso" type="Bone2D" parent="Skeleton2D"]
 position = Vector2(287, 246)
 rest = Transform2D(1, 0, 0, 1, 287, 246)
 
-[node name="LB" type="Bone2D" parent="Skeleton2D/e"]
+[node name="LB" type="Bone2D" parent="Skeleton2D/Torso"]
 position = Vector2(87, -38)
 rest = Transform2D(1, 0, 0, 1, 87, -38)
 
-[node name="LA" type="Bone2D" parent="Skeleton2D/e/LB"]
+[node name="LA" type="Bone2D" parent="Skeleton2D/Torso/LB"]
 position = Vector2(4, 151)
 rest = Transform2D(1, 0, 0, 1, 4, 151)
 
-[node name="RB" type="Bone2D" parent="Skeleton2D/e"]
+[node name="RB" type="Bone2D" parent="Skeleton2D/Torso"]
 position = Vector2(-75, 3)
 rotation = 1.32258
 scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, -119, -2)
 
-[node name="Head" type="Bone2D" parent="Skeleton2D/e"]
+[node name="Head" type="Bone2D" parent="Skeleton2D/Torso"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
