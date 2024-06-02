@@ -38,8 +38,7 @@ one_way_collision_margin = 0.0
 debug_color = Color(7.60466e-06, 0.586883, 0.770228, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -250)
-zoom = Vector2(0.8, 0.8)
+offset = Vector2(0, -200)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

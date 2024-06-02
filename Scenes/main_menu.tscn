@@ -100,5 +100,5 @@ label_settings = SubResource("LabelSettings_vjw6d")
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Play Game" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settings" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_play_game_pressed"]

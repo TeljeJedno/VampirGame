@@ -51,6 +51,7 @@ func _on_timer_timeout():
 	dash = false
 	
 func change_hp (h):
+	print("HELTI")
 	blood_bar += h
 
 #func _on_area_2d_body_entered(body):
