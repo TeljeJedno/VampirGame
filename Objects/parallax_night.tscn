@@ -13,7 +13,8 @@ transform = Transform2D(1, 0, 0, 1, 0, 540)
 script = ExtResource("1_syil1")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.5, 0.5)
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(3780, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 texture = ExtResource("1_yadii")
@@ -30,7 +31,7 @@ texture = ExtResource("3_yt1k2")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
 position = Vector2(296, -381)
-motion_scale = Vector2(0.1, 0.1)
+motion_scale = Vector2(0.05, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
 texture = ExtResource("4_b0ngf")
@@ -39,11 +40,11 @@ texture = ExtResource("4_b0ngf")
 clip_contents = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = -170.0
-offset_top = -172.0
-offset_right = 169.0
-offset_bottom = 167.0
+offset_left = -162.0
+offset_top = -162.0
+offset_right = 177.0
+offset_bottom = 177.0
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3/Sprite2D/Control"]
-position = Vector2(170, 172)
+position = Vector2(170, 162)
 texture = ExtResource("5_01len")

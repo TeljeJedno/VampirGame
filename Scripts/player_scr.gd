@@ -3,13 +3,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var dash = false
-var dashable = true
-var blood_bar = 1
+var movable = true
+var blood_bar = 75
 var jump_charges = 2
 var bodies = []
 @onready var action_timer = $Timer
 @onready var attack_range = $AttackRange
-@onready var cooldown_timer = $CooldownTimer
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -36,13 +35,11 @@ func _physics_process(delta):
 	
 	if direction:	
 		#Handle dash
-		if Input.is_action_just_pressed("dash") and dashable == true:			
+		if Input.is_action_just_pressed("dash"):			
 			action_timer.start()
 			dash = true;
-			dashable = false;
 		if dash == true:
 			velocity.x = direction * SPEED * 5
-			cooldown_timer.start()
 		else:	
 			velocity.x = direction * SPEED
 	else:
@@ -54,7 +51,6 @@ func _on_timer_timeout():
 	dash = false
 	
 func change_hp (h):
-	print("HELTI")
 	blood_bar += h
 
 #func _on_area_2d_body_entered(body):
@@ -79,7 +75,3 @@ func checkArea():
 			pass
 		elif "Knight" in body_names:
 			pass
-
-
-func _on_cooldown_timer_timeout():
-	dashable = true
