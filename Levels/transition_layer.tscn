@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://74cdc4emntpu"]
+[gd_scene load_steps=8 format=3 uid="uid://crk1o0rwuv8o1"]
 
 [ext_resource type="FontFile" uid="uid://dgptphts8sush" path="res://Fonts/Amarante-Regular.ttf" id="1_4xhlt"]
 [ext_resource type="Script" path="res://Scripts/transition_layer.gd" id="1_nubcm"]

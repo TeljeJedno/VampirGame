@@ -1,51 +1,160 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1ycb4gducicl"]
+[gd_scene load_steps=16 format=3 uid="uid://dv3088kxyuwt8"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_7kwcp"]
-[ext_resource type="Texture2D" uid="uid://b83nvrlcyp0e0" path="res://Sprites/bg_main_menu.png" id="2_2c2my"]
+[ext_resource type="Texture2D" uid="uid://ciprwq72p8byq" path="res://ui/bg_ui_new.png" id="2_40n28"]
 [ext_resource type="Texture2D" uid="uid://bdef4fco4wxer" path="res://Sprites/btn_play_1.png" id="3_6manm"]
 [ext_resource type="Texture2D" uid="uid://dc3rq1yenrmon" path="res://Sprites/btn_play_2.png" id="4_krcwk"]
 [ext_resource type="Texture2D" uid="uid://g7pyhi6m5ewj" path="res://Sprites/btn_settings_1.png" id="5_1lbln"]
 [ext_resource type="Texture2D" uid="uid://clpphyrise2kd" path="res://Sprites/btn_settings_2.png" id="6_wwvi1"]
 [ext_resource type="Texture2D" uid="uid://cwckd1cl34l0c" path="res://Sprites/btn_quit_1.png" id="7_sfrij"]
 [ext_resource type="Texture2D" uid="uid://c5n5halqrb4r6" path="res://Sprites/btn_quit_2.png" id="8_nh8dh"]
-[ext_resource type="FontFile" uid="uid://dgptphts8sush" path="res://Fonts/Amarante-Regular.ttf" id="9_xu0xn"]
+[ext_resource type="Texture2D" uid="uid://rp55abp0dbkr" path="res://ui/title.png" id="9_yxdwl"]
+[ext_resource type="Texture2D" uid="uid://cjstb7idoxt6a" path="res://ui/ui_moon_bouncing.png" id="10_5x6au"]
+[ext_resource type="Texture2D" uid="uid://cnxumtrhxcmb5" path="res://ui/ui_sun_rotating.png" id="11_u02sv"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_3feea"]
-font = ExtResource("9_xu0xn")
-font_size = 150
-font_color = Color(0.788235, 0, 0, 1)
+[sub_resource type="Animation" id="Animation_2pkeq"]
+resource_name = "sun "
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiSunRotating:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1134, -168), Vector2(1129, 243)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UiMoonBouncing:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(194, -178), Vector2(191, 241)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UiSunRotating:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.8, 2, 2.3, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.20629, -0.840846, -0.535136, -0.143242, -1.20629]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UiMoonBouncing:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -1.0929, -1.0929]
+}
 
-[sub_resource type="LabelSettings" id="LabelSettings_vjw6d"]
-font = ExtResource("9_xu0xn")
-font_size = 75
-font_color = Color(0.788235, 0, 0, 1)
+[sub_resource type="Animation" id="Animation_7qyp8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiSunRotating:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1134, -168)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UiMoonBouncing:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(175, -181)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UiSunRotating:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UiMoonBouncing:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_v6pfx"]
+resource_name = "rays"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7tkgi"]
+_data = {
+"RESET": SubResource("Animation_7qyp8"),
+"rays": SubResource("Animation_v6pfx"),
+"sun ": SubResource("Animation_2pkeq")
+}
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = 3.0
+offset_right = 93.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7kwcp")
 
-[node name="BgMainMenu" type="Sprite2D" parent="."]
-position = Vector2(572, 317)
-scale = Vector2(0.615006, 0.603674)
-texture = ExtResource("2_2c2my")
+[node name="BgUiNew" type="Sprite2D" parent="."]
+position = Vector2(711, 449)
+scale = Vector2(0.814792, 0.909395)
+texture = ExtResource("2_40n28")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 180.0
-offset_top = 147.0
-offset_right = 180.0
-offset_bottom = 147.0
+offset_left = -78.0
+offset_top = 171.0
+offset_right = -78.0
+offset_bottom = 171.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.710148, 0.697809)
+scale = Vector2(0.953243, 0.999893)
 
 [node name="Buttons MainMenu" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -69,36 +178,27 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("8_nh8dh")
 texture_hover = ExtResource("7_sfrij")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
-offset_left = 440.0
-offset_top = 51.0
-offset_right = 684.0
-offset_bottom = 239.0
-grow_horizontal = 2
-text = "SAV"
-label_settings = SubResource("LabelSettings_3feea")
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(647, 241)
+scale = Vector2(1.21229, 0.953155)
+texture = ExtResource("9_yxdwl")
 
-[node name="Label2" type="Label" parent="Label"]
-layout_mode = 0
-offset_left = 242.0
-offset_top = 76.0
-offset_right = 299.0
-offset_bottom = 202.0
-text = "A"
-label_settings = SubResource("LabelSettings_vjw6d")
+[node name="UiMoonBouncing" type="Sprite2D" parent="."]
+position = Vector2(175, -181)
+texture = ExtResource("10_5x6au")
 
-[node name="Label" type="Label" parent="Label"]
-layout_mode = 0
-offset_left = 247.0
-offset_top = 16.0
-offset_right = 295.0
-offset_bottom = 142.0
-text = "E"
-label_settings = SubResource("LabelSettings_vjw6d")
+[node name="UiSunRotating" type="Sprite2D" parent="."]
+position = Vector2(1134, -168)
+texture = ExtResource("11_u02sv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7tkgi")
+}
+autoplay = "sun "
 
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Play Game" to="." method="_on_play_game_pressed"]
-[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settings" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settings" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_play_game_pressed"]
