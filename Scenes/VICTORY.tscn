@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8fu5q5yyxv1o"]
+
+[ext_resource type="Texture2D" uid="uid://dg8dv5y2jv6pn" path="res://Scenes/victory_screen_ref.png" id="1_b0xhl"]
+[ext_resource type="Texture2D" uid="uid://cyi7vkihyus4i" path="res://Sprites/VictoryDeath/back_btn.png" id="2_2m0rk"]
+[ext_resource type="Texture2D" uid="uid://bnfl817hvhf6a" path="res://Sprites/VictoryDeath/back_red.png" id="3_xvo7n"]
+[ext_resource type="Script" path="res://Scenes/TextureButton.gd" id="4_v2w87"]
+
+[node name="Death" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(815, 442)
+scale = Vector2(0.936988, 0.89048)
+texture = ExtResource("1_b0xhl")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 889.0
+offset_top = 278.0
+offset_right = 1074.0
+offset_bottom = 345.0
+texture_normal = ExtResource("2_2m0rk")
+texture_hover = ExtResource("3_xvo7n")
+script = ExtResource("4_v2w87")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

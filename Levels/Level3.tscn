@@ -1,0 +1,234 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfpqhop2giear"]
+
+[ext_resource type="Texture2D" uid="uid://dsvx1ta35v1ad" path="res://Sprites/bg_day.png" id="1_uivwy"]
+[ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="2_l3kmm"]
+[ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="3_wcb8o"]
+[ext_resource type="PackedScene" uid="uid://b7g3dkjvxv4px" path="res://Scenes/coffin.tscn" id="4_mr727"]
+[ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="5_t4uiu"]
+
+[node name="Level1" type="Node2D"]
+position = Vector2(28, 162)
+
+[node name="Bg2" type="Sprite2D" parent="."]
+position = Vector2(1800, -10)
+texture = ExtResource("1_uivwy")
+metadata/_edit_lock_ = true
+
+[node name="Bg3" type="Sprite2D" parent="."]
+position = Vector2(5572, -10)
+scale = Vector2(-1, 1)
+texture = ExtResource("1_uivwy")
+metadata/_edit_lock_ = true
+
+[node name="Platforms and walls" type="Node2D" parent="."]
+position = Vector2(344, -74)
+
+[node name="big" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(1417, 196)
+rotation = -2.12562e-06
+scale = Vector2(-3.47914, -3.65308)
+
+[node name="StaticBody2D2" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(-172, 118)
+rotation = -1.61132e-06
+scale = Vector2(4.41922, -15.7514)
+
+[node name="StaticBody2D3" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(318, -7)
+rotation = 0.738964
+scale = Vector2(4.32817, 1.52325)
+
+[node name="StaticBody2D6" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(991, -500)
+rotation = 0.738964
+scale = Vector2(4.09997, 12.6736)
+
+[node name="StaticBody2D4" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(1600, -21)
+rotation = -1.61132e-06
+scale = Vector2(1.84064, 0.587499)
+
+[node name="StaticBody2D7" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(2229, -256)
+rotation = -1.61132e-06
+scale = Vector2(6.08065, 0.587499)
+
+[node name="StaticBody2D12" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(2906, -239)
+rotation = 0.23363
+scale = Vector2(2.22403, -0.543754)
+
+[node name="StaticBody2D8" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(2117, 51)
+rotation = -1.61132e-06
+scale = Vector2(0.615312, -0.546577)
+
+[node name="StaticBody2D9" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(2528, -6)
+rotation = -1.61132e-06
+scale = Vector2(0.615312, -0.546577)
+
+[node name="StaticBody2D10" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(3024, 111)
+rotation = -1.61132e-06
+scale = Vector2(0.615312, -0.546577)
+
+[node name="StaticBody2D11" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(3551, 33)
+rotation = -1.61132e-06
+scale = Vector2(0.615312, -0.546577)
+
+[node name="Floor" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(3615, 510)
+rotation = -1.61132e-06
+scale = Vector2(67.5695, -12.4647)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D5" parent="Platforms and walls" instance=ExtResource("2_l3kmm")]
+position = Vector2(5975, -99)
+rotation = -5.23002e-05
+scale = Vector2(4.81645, 41.9722)
+skew = 4.95911e-05
+
+[node name="SpikesAndObstacles" type="Node2D" parent="."]
+
+[node name="DS" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(538, -264)
+rotation = 0.779344
+
+[node name="Spikes" parent="SpikesAndObstacles/DS" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS3" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(1073, -389)
+rotation = 3.9312
+
+[node name="Spikes" parent="SpikesAndObstacles/DS3" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS3" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS4" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(1276, -195)
+rotation = 3.9312
+
+[node name="Spikes" parent="SpikesAndObstacles/DS4" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS4" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS5" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(1775, 19)
+rotation = 6.31868
+
+[node name="Spikes" parent="SpikesAndObstacles/DS5" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes3" parent="SpikesAndObstacles/DS5" instance=ExtResource("3_wcb8o")]
+position = Vector2(-289.911, 120.364)
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS5" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS6" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(2067, 97)
+rotation = 6.31868
+
+[node name="Spikes" parent="SpikesAndObstacles/DS6" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS6" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS7" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(2347, 104)
+rotation = 6.31868
+
+[node name="Spikes" parent="SpikesAndObstacles/DS7" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS7" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS8" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(2638, 107)
+rotation = 6.31868
+
+[node name="Spikes" parent="SpikesAndObstacles/DS8" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS8" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS9" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(2917, 105)
+rotation = 6.31868
+
+[node name="Spikes" parent="SpikesAndObstacles/DS9" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS9" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS11" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(3181, -338)
+rotation = 6.5425
+
+[node name="Spikes" parent="SpikesAndObstacles/DS11" instance=ExtResource("3_wcb8o")]
+position = Vector2(-3.0233, -22.2681)
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS11" instance=ExtResource("3_wcb8o")]
+position = Vector2(139.092, -24.0477)
+
+[node name="DS10" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(3197, 109)
+rotation = 6.31868
+
+[node name="Spikes" parent="SpikesAndObstacles/DS10" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS10" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS12" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(3477, 120)
+rotation = 6.31868
+
+[node name="Spikes" parent="SpikesAndObstacles/DS12" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS12" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS13" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(3771, 127)
+rotation = 6.31868
+
+[node name="Spikes" parent="SpikesAndObstacles/DS13" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS13" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="DS2" type="Node2D" parent="SpikesAndObstacles"]
+position = Vector2(746, -70)
+rotation = 0.779344
+
+[node name="Spikes" parent="SpikesAndObstacles/DS2" instance=ExtResource("3_wcb8o")]
+
+[node name="Spikes2" parent="SpikesAndObstacles/DS2" instance=ExtResource("3_wcb8o")]
+position = Vector2(142.835, -1.48119)
+rotation = -0.0379019
+
+[node name="Coffin" parent="." instance=ExtResource("4_mr727")]
+position = Vector2(5855, 35)
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("5_t4uiu")]
+position = Vector2(52, -414)
+forceRight = true

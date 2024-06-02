@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv8wap0mkcvu5"]
+[gd_scene load_steps=8 format=3 uid="uid://bv8wap0mkcvu5"]
 
 [ext_resource type="Texture2D" uid="uid://dsvx1ta35v1ad" path="res://Sprites/bg_day.png" id="1_7nddg"]
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ht775"]
 [ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="2_vflu1"]
 [ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="4_4acey"]
 [ext_resource type="PackedScene" uid="uid://b7g3dkjvxv4px" path="res://Scenes/coffin.tscn" id="5_8rqab"]
+[ext_resource type="Texture2D" uid="uid://di0m81p7c5ain" path="res://Sprites/jap_wall.png" id="6_gad6u"]
+[ext_resource type="Texture2D" uid="uid://tufi10njx64e" path="res://Sprites/japanese_house.png" id="7_ugjic"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(28, 162)
@@ -60,10 +62,6 @@ scale = Vector2(-1.4996, -29.4368)
 position = Vector2(3983, 564)
 scale = Vector2(-0.818061, -30.7229)
 
-[node name="Player" parent="." instance=ExtResource("1_ht775")]
-position = Vector2(4821, 52)
-forceRight = true
-
 [node name="SpikesAndObstacles" type="Node2D" parent="."]
 
 [node name="DS" type="Node2D" parent="SpikesAndObstacles"]
@@ -112,3 +110,16 @@ metadata/_edit_lock_ = true
 
 [node name="Coffin" parent="." instance=ExtResource("5_8rqab")]
 position = Vector2(5855, 35)
+
+[node name="Player" parent="." instance=ExtResource("1_ht775")]
+position = Vector2(4046, -149)
+forceRight = true
+
+[node name="JapWall" type="Sprite2D" parent="."]
+position = Vector2(4898, 101)
+texture = ExtResource("6_gad6u")
+
+[node name="JapaneseHouse" type="Sprite2D" parent="."]
+position = Vector2(4899, 42)
+scale = Vector2(1.32, 1)
+texture = ExtResource("7_ugjic")
