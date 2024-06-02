@@ -1,127 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2s0elmjmbmf7"]
+[gd_scene load_steps=9 format=3 uid="uid://c2s0elmjmbmf7"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_7x37d"]
 [ext_resource type="Texture2D" uid="uid://ciprwq72p8byq" path="res://ui/bg_ui_new.png" id="2_8yx6d"]
-[ext_resource type="Texture2D" uid="uid://c5n5halqrb4r6" path="res://Sprites/btn_quit_2.png" id="7_0107f"]
-[ext_resource type="Texture2D" uid="uid://cwckd1cl34l0c" path="res://Sprites/btn_quit_1.png" id="8_bcitw"]
-[ext_resource type="Texture2D" uid="uid://rp55abp0dbkr" path="res://ui/title.png" id="9_x23vj"]
+[ext_resource type="Texture2D" uid="uid://bovsk8sqk38nd" path="res://ui/btn_settings_1.png" id="3_yk8yc"]
+[ext_resource type="Texture2D" uid="uid://cdytuyka58nde" path="res://ui/back_btn.png" id="4_qv28u"]
+[ext_resource type="Texture2D" uid="uid://c12so2icl2o4f" path="res://ui/settings_menu.png" id="6_uhq4v"]
+[ext_resource type="Texture2D" uid="uid://bulep483mmks7" path="res://ui/slider.png" id="7_5ilf2"]
 [ext_resource type="Texture2D" uid="uid://cjstb7idoxt6a" path="res://ui/ui_moon_bouncing.png" id="10_cbxrm"]
 [ext_resource type="Texture2D" uid="uid://cnxumtrhxcmb5" path="res://ui/ui_sun_rotating.png" id="11_t5g5d"]
 
-[sub_resource type="Animation" id="Animation_7qyp8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UiSunRotating:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1134, -168)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("UiMoonBouncing:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(175, -181)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("UiSunRotating:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("UiMoonBouncing:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_v6pfx"]
-resource_name = "rays"
-
-[sub_resource type="Animation" id="Animation_2pkeq"]
-resource_name = "sun "
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UiSunRotating:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1134, -168), Vector2(1129, 243)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("UiMoonBouncing:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(194, -178), Vector2(191, 241)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("UiSunRotating:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.8, 2, 2.3, 2.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -1.20629, -0.840846, -0.535136, -0.143242, -1.20629]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("UiMoonBouncing:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, -1.0929, -1.0929]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7tkgi"]
-_data = {
-"RESET": SubResource("Animation_7qyp8"),
-"rays": SubResource("Animation_v6pfx"),
-"sun ": SubResource("Animation_2pkeq")
-}
-
-[node name="Main Menu" type="Control"]
+[node name="Settins" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -140,32 +28,61 @@ scale = Vector2(0.814792, 0.909395)
 texture = ExtResource("2_8yx6d")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = 171.0
-offset_right = -78.0
-offset_bottom = 171.0
+offset_left = -102.0
+offset_top = -100.0
+offset_right = -102.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.953243, 0.999893)
+scale = Vector2(1.01937, 0.940329)
 
 [node name="Buttons MainMenu" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Quit" type="TextureButton" parent="MarginContainer/Buttons MainMenu"]
+[node name="Settins" type="TextureButton" parent="MarginContainer/Buttons MainMenu"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("7_0107f")
-texture_hover = ExtResource("8_bcitw")
+texture_normal = ExtResource("3_yk8yc")
 
-[node name="Title" type="Sprite2D" parent="."]
-position = Vector2(647, 241)
-scale = Vector2(1.21229, 0.953155)
-texture = ExtResource("9_x23vj")
+[node name="BackButtonContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 77.0
+offset_top = -163.0
+offset_right = 1677.0
+offset_bottom = 737.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997442, 0.920239)
+
+[node name="Button" type="VBoxContainer" parent="BackButtonContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Back Button" type="TextureButton" parent="BackButtonContainer/Button"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_qv28u")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(708, 590)
+scale = Vector2(0.89696, 0.82409)
+
+[node name="SettingsMenu" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("6_uhq4v")
+
+[node name="Slider" type="Sprite2D" parent="Node2D"]
+position = Vector2(97, -138)
+texture = ExtResource("7_5ilf2")
+
+[node name="Slider2" type="Sprite2D" parent="Node2D"]
+position = Vector2(99, 18)
+texture = ExtResource("7_5ilf2")
 
 [node name="UiMoonBouncing" type="Sprite2D" parent="."]
 position = Vector2(175, -181)
@@ -175,11 +92,6 @@ texture = ExtResource("10_cbxrm")
 position = Vector2(1134, -168)
 texture = ExtResource("11_t5g5d")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_7tkgi")
-}
-autoplay = "sun "
-
-[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_play_game_pressed"]
-[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settins" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settins" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="BackButtonContainer/Button/Back Button" to="." method="_on_back_button_pressed"]
