@@ -76,7 +76,8 @@ func _on_timer_timeout():
 	
 func change_hp (h):
 	blood_bar += h
-
+	if blood_bar <= 0:
+		get_tree().change_scene_to_file("res://Scenes/DEATH.tscn")
 #func _on_area_2d_body_entered(body):
 	#if victim == null:
 		#victim = body

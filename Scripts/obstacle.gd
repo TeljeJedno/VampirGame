@@ -20,4 +20,4 @@ func _process(delta):
 func _on_body_entered(body):
 	match body.name:
 		"Player":
-			body.queue_free()
+			get_tree().change_scene_to_file("res://Scenes/DEATH.tscn")

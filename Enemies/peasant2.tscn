@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://drl2vtcxw25r2"]
+
+[ext_resource type="Script" path="res://Scripts/peasant_scr.gd" id="1_0rfv3"]
+[ext_resource type="Texture2D" uid="uid://r7ksulao5c8k" path="res://Sprites/girl copy.png" id="2_78rl2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c87m"]
+atlas = ExtResource("2_78rl2")
+region = Rect2(0, 0, 86, 163)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8wno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c87m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvbrd"]
+size = Vector2(90, 86)
+
+[node name="Peasant" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_0rfv3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s8wno")
+
+[node name="BehaviourTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="PeasantBody" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PeasantBody"]
+position = Vector2(7, -15)
+shape = SubResource("RectangleShape2D_kvbrd")
+
+[connection signal="timeout" from="BehaviourTimer" to="." method="_on_behaviour_timer_timeout"]

@@ -1,19 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://cco2yi8wu4isa"]
+[gd_scene load_steps=17 format=3 uid="uid://cco2yi8wu4isa"]
 
 [ext_resource type="Texture2D" uid="uid://i65sksykkmj" path="res://Night Levels/Night top color.png" id="1_knoj5"]
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ryalo"]
-[ext_resource type="Texture2D" uid="uid://cgwj4xp46txt" path="res://Sprites/Sprite-Coffin.png" id="2_x8y2i"]
-[ext_resource type="Script" path="res://Levels/Coffid.gd" id="3_t2kwc"]
 [ext_resource type="PackedScene" uid="uid://c1ph5cok74t23" path="res://Enemies/knight.tscn" id="7_5yplp"]
 [ext_resource type="Texture2D" uid="uid://dhdp5qh53wrvu" path="res://Sprites/night_bg.png" id="7_8s0fw"]
+[ext_resource type="Texture2D" uid="uid://dujdyk0vvvv6f" path="res://Sprites/house_2.png" id="7_fyt8q"]
 [ext_resource type="PackedScene" uid="uid://1x5d3t4cjge6" path="res://Enemies/archer.tscn" id="8_jtgso"]
 [ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="8_o63xn"]
 [ext_resource type="Texture2D" uid="uid://cluoq0mhgbcgx" path="res://Sprites/house_1.png" id="9_cgb7j"]
 [ext_resource type="PackedScene" uid="uid://dbqk7hw2yhhau" path="res://Enemies/peasant.tscn" id="11_6734x"]
 [ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="11_xsmbm"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8lqa"]
-size = Vector2(92, 144)
+[ext_resource type="Texture2D" uid="uid://ctbdh8ppiijep" path="res://ui/tree_white.png" id="12_8lrmg"]
+[ext_resource type="Texture2D" uid="uid://c6f71c8bjo4h1" path="res://ui/tree_yellow.png" id="13_of4v2"]
+[ext_resource type="Texture2D" uid="uid://qdq6n3angpyn" path="res://ui/tree_black.png" id="15_efc18"]
+[ext_resource type="PackedScene" uid="uid://rwwve3nnu7j" path="res://Scenes/coffin.tscn" id="15_iaxlq"]
+[ext_resource type="PackedScene" uid="uid://drl2vtcxw25r2" path="res://Enemies/peasant2.tscn" id="16_4mmog"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_im26i"]
 
@@ -39,20 +40,6 @@ texture = ExtResource("7_8s0fw")
 position = Vector2(2666, 475)
 texture = ExtResource("7_8s0fw")
 
-[node name="Player" parent="." instance=ExtResource("1_ryalo")]
-position = Vector2(-5528, -134)
-
-[node name="Sprite-coffin" type="Sprite2D" parent="."]
-position = Vector2(2194, 735)
-texture = ExtResource("2_x8y2i")
-
-[node name="Area2d" type="Area2D" parent="Sprite-coffin"]
-script = ExtResource("3_t2kwc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite-coffin/Area2d"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_v8lqa")
-
 [node name="LevelBounds" type="StaticBody2D" parent="."]
 position = Vector2(-701.5, 656)
 
@@ -71,7 +58,7 @@ rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_im26i")
 
 [node name="Top" type="CollisionShape2D" parent="LevelBounds"]
-position = Vector2(-1088.5, -1808)
+position = Vector2(-1088.5, -1967)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_im26i")
 
@@ -84,6 +71,32 @@ scale = Vector2(15, 1)
 position = Vector2(-4071.5, -499)
 rotation = 1.5708
 scale = Vector2(3, 1)
+
+[node name="House1" type="Sprite2D" parent="."]
+position = Vector2(-5265, 525)
+texture = ExtResource("9_cgb7j")
+
+[node name="House3" type="Sprite2D" parent="."]
+position = Vector2(-1763, -979)
+texture = ExtResource("9_cgb7j")
+
+[node name="House6" type="Sprite2D" parent="."]
+position = Vector2(493, -1224)
+scale = Vector2(0.560071, 0.560071)
+texture = ExtResource("7_fyt8q")
+
+[node name="House5" type="Sprite2D" parent="."]
+position = Vector2(-8.00002, 547)
+scale = Vector2(0.773852, 0.773852)
+texture = ExtResource("7_fyt8q")
+
+[node name="House4" type="Sprite2D" parent="."]
+position = Vector2(913, 527)
+texture = ExtResource("9_cgb7j")
+
+[node name="House2" type="Sprite2D" parent="."]
+position = Vector2(-3471, -553)
+texture = ExtResource("9_cgb7j")
 
 [node name="StaticBody2D5" parent="." instance=ExtResource("8_o63xn")]
 position = Vector2(-3553, 632)
@@ -120,14 +133,6 @@ scale = Vector2(1, 1)
 [node name="Archer" parent="." instance=ExtResource("8_jtgso")]
 position = Vector2(-5487, 446)
 
-[node name="House1" type="Sprite2D" parent="."]
-position = Vector2(-5265, 525)
-texture = ExtResource("9_cgb7j")
-
-[node name="House3" type="Sprite2D" parent="."]
-position = Vector2(-1763, -979)
-texture = ExtResource("9_cgb7j")
-
 [node name="Archer2" parent="." instance=ExtResource("8_jtgso")]
 position = Vector2(-4483, -159)
 
@@ -148,6 +153,26 @@ position = Vector2(-4073, 700)
 
 [node name="Spikes" parent="." instance=ExtResource("11_xsmbm")]
 position = Vector2(-5130, -113)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spikes3" parent="." instance=ExtResource("11_xsmbm")]
+position = Vector2(-537, -130)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spikes4" parent="." instance=ExtResource("11_xsmbm")]
+position = Vector2(-1056, 726)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spikes5" parent="." instance=ExtResource("11_xsmbm")]
+position = Vector2(-849, 725)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spikes6" parent="." instance=ExtResource("11_xsmbm")]
+position = Vector2(-636, 725)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spikes7" parent="." instance=ExtResource("11_xsmbm")]
+position = Vector2(-439, 725)
 scale = Vector2(0.5, 0.5)
 
 [node name="Spikes2" parent="." instance=ExtResource("11_xsmbm")]
@@ -207,10 +232,6 @@ scale = Vector2(6, 1.169)
 position = Vector2(-3768, -86)
 scale = Vector2(0.535, 9.809)
 
-[node name="House2" type="Sprite2D" parent="."]
-position = Vector2(-3471, -553)
-texture = ExtResource("9_cgb7j")
-
 [node name="Peasant6" parent="." instance=ExtResource("11_6734x")]
 position = Vector2(-3211, -393)
 
@@ -229,6 +250,9 @@ position = Vector2(-3352, -385)
 [node name="Knight4" parent="." instance=ExtResource("7_5yplp")]
 position = Vector2(-1437, 689)
 
+[node name="Knight6" parent="." instance=ExtResource("7_5yplp")]
+position = Vector2(-3486, -385)
+
 [node name="Archer9" parent="." instance=ExtResource("8_jtgso")]
 position = Vector2(-1616, -783)
 
@@ -244,4 +268,189 @@ position = Vector2(-2061, -789)
 [node name="Knight5" parent="." instance=ExtResource("7_5yplp")]
 position = Vector2(-1674, -782)
 
-[connection signal="body_entered" from="Sprite-coffin/Area2d" to="Sprite-coffin/Area2d" method="_on_body_entered"]
+[node name="TreeWhite" type="Sprite2D" parent="."]
+position = Vector2(-2000, -984)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("12_8lrmg")
+
+[node name="Archer11" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-1525, -781)
+
+[node name="Archer12" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-2079, -1096)
+
+[node name="StaticBody2D16" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-308, -79)
+
+[node name="StaticBody2D18" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-308, 581)
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D20" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-220, 465)
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D21" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-146, 586)
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D22" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-146, 586)
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D17" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(576, -1027)
+
+[node name="StaticBody2D19" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-538, -889)
+scale = Vector2(0.5, 1.169)
+
+[node name="TreeWhite2" type="Sprite2D" parent="."]
+position = Vector2(405, 406)
+texture = ExtResource("12_8lrmg")
+
+[node name="TreeWhite3" type="Sprite2D" parent="."]
+position = Vector2(-6642, 584)
+scale = Vector2(0.469784, 0.469784)
+texture = ExtResource("12_8lrmg")
+
+[node name="TreeWhite4" type="Sprite2D" parent="."]
+position = Vector2(-6296, 406)
+texture = ExtResource("12_8lrmg")
+
+[node name="TreeYellow" type="Sprite2D" parent="."]
+position = Vector2(-116, -322)
+scale = Vector2(0.610791, 0.610791)
+texture = ExtResource("13_of4v2")
+
+[node name="TreeYellow3" type="Sprite2D" parent="."]
+position = Vector2(-536, -975)
+scale = Vector2(0.157886, 0.157886)
+texture = ExtResource("13_of4v2")
+
+[node name="TreeYellow4" type="Sprite2D" parent="."]
+position = Vector2(-536, -975)
+scale = Vector2(0.157886, 0.157886)
+texture = ExtResource("13_of4v2")
+
+[node name="Player" parent="." instance=ExtResource("1_ryalo")]
+position = Vector2(-5533, -193)
+
+[node name="TreeBlack2" type="Sprite2D" parent="."]
+position = Vector2(-6459, 509)
+scale = Vector2(0.806475, 0.806475)
+texture = ExtResource("15_efc18")
+
+[node name="TreeBlack3" type="Sprite2D" parent="."]
+position = Vector2(-5959, 482)
+scale = Vector2(0.806475, 0.806475)
+texture = ExtResource("15_efc18")
+
+[node name="TreeBlack" type="Sprite2D" parent="."]
+position = Vector2(1544, 143)
+scale = Vector2(1.77914, 1.77914)
+texture = ExtResource("15_efc18")
+
+[node name="TreeYellow2" type="Sprite2D" parent="."]
+position = Vector2(-6131, 567)
+scale = Vector2(0.543165, 0.543165)
+texture = ExtResource("13_of4v2")
+
+[node name="Archer14" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-529, -959)
+
+[node name="Archer21" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-529, -959)
+
+[node name="Archer22" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(248, 714)
+
+[node name="Archer23" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(759, -1347)
+
+[node name="Archer15" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(285, -1105)
+
+[node name="TreeYellow5" type="Sprite2D" parent="."]
+position = Vector2(824, -1254)
+scale = Vector2(0.551724, 0.551724)
+texture = ExtResource("13_of4v2")
+
+[node name="Archer16" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(920, -1356)
+
+[node name="Knight8" parent="." instance=ExtResource("7_5yplp")]
+position = Vector2(689, -1109)
+
+[node name="Archer17" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-218, 398)
+
+[node name="Archer18" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-301, 511)
+
+[node name="Archer19" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-135, 511)
+
+[node name="Archer20" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-1246, 699)
+
+[node name="Peasant11" parent="." instance=ExtResource("16_4mmog")]
+position = Vector2(-4471, 698)
+
+[node name="Peasant12" parent="." instance=ExtResource("16_4mmog")]
+position = Vector2(-3660, 122)
+
+[node name="Peasant13" parent="." instance=ExtResource("16_4mmog")]
+position = Vector2(-239, -152)
+
+[node name="Peasant14" parent="." instance=ExtResource("16_4mmog")]
+position = Vector2(-153, -156)
+
+[node name="Peasant15" parent="." instance=ExtResource("16_4mmog")]
+position = Vector2(857, 707)
+
+[node name="Peasant16" parent="." instance=ExtResource("11_6734x")]
+position = Vector2(1228, 699)
+
+[node name="Peasant17" parent="." instance=ExtResource("16_4mmog")]
+position = Vector2(654, 715)
+scale = Vector2(-0.5, 0.5)
+
+[node name="Peasant18" parent="." instance=ExtResource("16_4mmog")]
+position = Vector2(1103, 723)
+scale = Vector2(-0.5, 0.5)
+
+[node name="Knight9" parent="." instance=ExtResource("7_5yplp")]
+position = Vector2(1859, 698)
+
+[node name="Knight10" parent="." instance=ExtResource("7_5yplp")]
+position = Vector2(1345, 696)
+scale = Vector2(-0.5, 0.5)
+
+[node name="StaticBody2D23" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(1630, 99)
+
+[node name="Archer24" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(1343, 6)
+
+[node name="Archer25" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(1893, 12)
+
+[node name="Knight11" parent="." instance=ExtResource("7_5yplp")]
+position = Vector2(1755, 10)
+
+[node name="Node2D" parent="." instance=ExtResource("15_iaxlq")]
+position = Vector2(2213, 689)
+scenepath = "res://Levels/Level3.tscn"
+lvlNum = "3"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.235294)
+offset_left = -12281.0
+offset_top = -7795.0
+offset_right = -12241.0
+offset_bottom = -7755.0
+scale = Vector2(782.49, 902.164)
+mouse_filter = 2

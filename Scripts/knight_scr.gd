@@ -98,4 +98,3 @@ func _on_relax_timer_timeout():
 func _on_damage_area_body_entered(body):
 	if body.name == "Player":
 		body.change_hp(-20)
-		damage_shape.disabled = true

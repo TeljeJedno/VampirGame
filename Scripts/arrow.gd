@@ -12,6 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not targetPos: return
 	if path_follow_2d.progress_ratio >= 0.98: queue_free()
 	path_follow_2d.progress += speed * delta
 	pass

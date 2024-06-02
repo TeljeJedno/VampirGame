@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfpqhop2giear"]
+[gd_scene load_steps=6 format=3 uid="uid://del4nb4y5ib11"]
 
 [ext_resource type="Texture2D" uid="uid://dsvx1ta35v1ad" path="res://Sprites/bg_day.png" id="1_uivwy"]
 [ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="2_l3kmm"]
 [ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="3_wcb8o"]
-[ext_resource type="PackedScene" uid="uid://b7g3dkjvxv4px" path="res://Scenes/coffin.tscn" id="4_mr727"]
+[ext_resource type="PackedScene" uid="uid://rwwve3nnu7j" path="res://Scenes/coffin.tscn" id="4_mr727"]
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="5_t4uiu"]
 
 [node name="Level1" type="Node2D"]
@@ -227,6 +227,8 @@ rotation = -0.0379019
 
 [node name="Coffin" parent="." instance=ExtResource("4_mr727")]
 position = Vector2(5855, 35)
+scenepath = "res://Scenes/VICTORY.tscn"
+lvlNum = "Victory"
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("5_t4uiu")]

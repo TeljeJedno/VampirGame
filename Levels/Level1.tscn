@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ht775"]
 [ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="2_vflu1"]
 [ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="4_4acey"]
-[ext_resource type="PackedScene" uid="uid://b7g3dkjvxv4px" path="res://Scenes/coffin.tscn" id="5_8rqab"]
+[ext_resource type="PackedScene" uid="uid://rwwve3nnu7j" path="res://Scenes/coffin.tscn" id="5_8rqab"]
 [ext_resource type="FontFile" uid="uid://dgptphts8sush" path="res://Fonts/Amarante-Regular.ttf" id="6_7pdwf"]
 [ext_resource type="PackedScene" uid="uid://m8okwv3visvw" path="res://Objects/crate.tscn" id="7_3wnmr"]
-[ext_resource type="PackedScene" uid="uid://nxtm0sf4sauk" path="res://Objects/pagoda.tscn" id="8_os4pf"]
+[ext_resource type="PackedScene" path="res://Objects/pagoda.tscn" id="8_os4pf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3p8t2"]
 font = ExtResource("6_7pdwf")
@@ -119,6 +119,8 @@ metadata/_edit_lock_ = true
 
 [node name="Coffin" parent="." instance=ExtResource("5_8rqab")]
 position = Vector2(5855, 35)
+scenepath = "res://Night Levels/Night1.tscn"
+lvlNum = "2"
 
 [node name="Player" parent="." instance=ExtResource("1_ht775")]
 position = Vector2(138, 54)

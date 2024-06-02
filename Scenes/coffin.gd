@@ -1,6 +1,6 @@
 extends Area2D
-
-
+@export var scenepath = ""
+@export var lvlNum = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,4 +13,4 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		TransitionLayer.changeScene("res://Night Levels/Night1.tscn","2")
+		TransitionLayer.changeScene(scenepath,lvlNum)
