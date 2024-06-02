@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnn2g3g3171nw"]
+[gd_scene load_steps=9 format=3 uid="uid://dnn2g3g3171nw"]
 
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="2_240iw"]
 [ext_resource type="Texture2D" uid="uid://cgwj4xp46txt" path="res://Sprites/Sprite-Coffin.png" id="3_js2gp"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c1ph5cok74t23" path="res://Enemies/knight.tscn" id="5_xpahk"]
 [ext_resource type="PackedScene" uid="uid://dbqk7hw2yhhau" path="res://Enemies/peasant.tscn" id="6_l7vca"]
 [ext_resource type="PackedScene" uid="uid://1x5d3t4cjge6" path="res://Enemies/archer.tscn" id="7_3qem8"]
-[ext_resource type="PackedScene" uid="uid://5u6bixnqfk7x" path="res://Objects/parallax_night.tscn" id="7_g3pu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8lqa"]
 size = Vector2(92, 144)
@@ -54,8 +53,5 @@ shape = SubResource("WorldBoundaryShape2D_im26i")
 position = Vector2(3000, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_im26i")
-
-[node name="ParallaxNight" parent="." instance=ExtResource("7_g3pu0")]
-scroll_offset = Vector2(129.826, 423.397)
 
 [connection signal="body_entered" from="Sprite-coffin/Area2d" to="Sprite-coffin/Area2d" method="_on_body_entered"]

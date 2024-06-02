@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://covrk6svmr1se"]
+[gd_scene load_steps=6 format=3 uid="uid://covrk6svmr1se"]
 
 [ext_resource type="Script" path="res://Scripts/player_scr.gd" id="1_2xwux"]
 [ext_resource type="PackedScene" uid="uid://pmbehd4fi2ow" path="res://Scenes/TEST.tscn" id="2_v331d"]
+[ext_resource type="PackedScene" uid="uid://1od3bvw74gp0" path="res://Objects/bloodMoon.tscn" id="3_jks7l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u7ogo"]
 radius = 30.0
@@ -13,6 +14,9 @@ size = Vector2(300, 200)
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_2xwux")
+
+[node name="moon" parent="." instance=ExtResource("3_jks7l")]
+position = Vector2(784, -910)
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_v331d")]
 position = Vector2(-3.8147e-06, -7.62939e-06)
