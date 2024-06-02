@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbqk7hw2yhhau" path="res://Enemies/peasant.tscn" id="3_n1oat"]
 [ext_resource type="PackedScene" uid="uid://c1ph5cok74t23" path="res://Enemies/knight.tscn" id="4_vo6r1"]
 
-[node name="level_1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 position = Vector2(574, 283)
 
 [node name="Player" parent="." instance=ExtResource("3_bmw5r")]
