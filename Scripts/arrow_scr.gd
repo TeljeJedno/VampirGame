@@ -13,15 +13,15 @@ func _ready():
 	
 	
 func _physics_process(delta):
-	var direction = global_position.direction_to(target.global_position)
+	#var direction = global_position.direction_to(target.global_position)
 	
-	var desired_vel = direction * max_speed
-	var change = (desired_vel - cur_vel) * turn_spd
+	#var desired_vel = direction * max_speed
+	#var change = (desired_vel - cur_vel) * turn_spd
 	
-	cur_vel += change
-	position += cur_vel * delta
-	look_at(global_position +  cur_vel)
-	
+	#cur_vel += change
+	#position += cur_vel * delta
+	#look_at(global_position +  cur_vel)
+	pass
 	
 	
 	
