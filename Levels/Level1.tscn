@@ -1,27 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://pva8ue61sokt"]
+[gd_scene load_steps=6 format=3 uid="uid://bv8wap0mkcvu5"]
 
-[ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ht775"]
-[ext_resource type="PackedScene" uid="uid://m4kmvlcpgjvf" path="res://Objects/solid.tscn" id="2_vrwvb"]
-[ext_resource type="PackedScene" uid="uid://dbqk7hw2yhhau" path="res://Enemies/peasant.tscn" id="3_kt324"]
-[ext_resource type="PackedScene" uid="uid://c1ph5cok74t23" path="res://Enemies/knight.tscn" id="4_sgml4"]
+[ext_resource type="Texture2D" uid="uid://b5xffa1o3dxl8" path="res://Sprites/bg_2.png" id="1_pnj7j"]
+[ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="2_254jb"]
+[ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="3_bmw5r"]
+[ext_resource type="PackedScene" path="res://Objects/stake.tscn" id="4_frxy8"]
 
-[node name="level_1" type="Node2D"]
-position = Vector2(574, 283)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nnso"]
+size = Vector2(20.1297, 20)
 
-[node name="Player" parent="." instance=ExtResource("1_ht775")]
-position = Vector2(0, -114)
+[node name="Level2" type="Node2D"]
+position = Vector2(-69, 163)
 
-[node name="Solid" parent="." instance=ExtResource("2_vrwvb")]
-position = Vector2(-23, 15)
+[node name="Bg2" type="Sprite2D" parent="."]
+position = Vector2(2605, -19)
+texture = ExtResource("1_pnj7j")
 
-[node name="Solid2" parent="." instance=ExtResource("2_vrwvb")]
-position = Vector2(7, 15)
+[node name="StaticBody2D" type="StaticBody2D" parent="Bg2"]
+position = Vector2(13, -50)
 
-[node name="Solid3" parent="." instance=ExtResource("2_vrwvb")]
-position = Vector2(37, 15)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bg2/StaticBody2D"]
+position = Vector2(82, 470)
+scale = Vector2(275.528, -13.1886)
+shape = SubResource("RectangleShape2D_7nnso")
 
-[node name="Peasant" parent="." instance=ExtResource("3_kt324")]
-position = Vector2(-81, -67)
+[node name="Platforms and walls" type="Node2D" parent="."]
+position = Vector2(344, -74)
 
-[node name="Knight" parent="." instance=ExtResource("4_sgml4")]
-position = Vector2(-64, -22)
+[node name="StaticBody2D2" parent="Platforms and walls" instance=ExtResource("2_254jb")]
+position = Vector2(1226, 170)
+rotation = -1.61132e-06
+scale = Vector2(1.84064, 0.587499)
+
+[node name="StaticBody2D" parent="Platforms and walls" instance=ExtResource("2_254jb")]
+position = Vector2(-519, -57)
+scale = Vector2(-1.4996, -29.4368)
+
+[node name="Player" parent="." instance=ExtResource("3_bmw5r")]
+position = Vector2(411, 47)
+
+[node name="SpikesAndObstacles" type="Node2D" parent="."]
+
+[node name="Stake" parent="SpikesAndObstacles" instance=ExtResource("4_frxy8")]
+position = Vector2(1758, 200)

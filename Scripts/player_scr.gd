@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 400.0
+const JUMP_VELOCITY = -600.0
 var dash = false
 var dashable = true
 var blood_bar = 75
@@ -36,6 +36,11 @@ func _physics_process(delta):
 	
 	if direction:	
 		#Handle dash
+		$PlayerBody/AnimationPlayer.play("RUN")
+		if direction < 0:
+			$PlayerBody.scale = Vector2(-0.2,0.2)
+		else:
+			$PlayerBody.scale = Vector2(0.2,0.2)
 		if Input.is_action_just_pressed("dash") and dashable == true:			
 			action_timer.start()
 			dash = true;
@@ -46,6 +51,7 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		$PlayerBody/AnimationPlayer.play("RESET")
 
 	move_and_slide()
 

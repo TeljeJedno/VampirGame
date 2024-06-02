@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Levels/Coffid.gd" id="4_dovg6"]
 [ext_resource type="PackedScene" uid="uid://c1ph5cok74t23" path="res://Enemies/knight.tscn" id="5_xpahk"]
 [ext_resource type="PackedScene" uid="uid://dbqk7hw2yhhau" path="res://Enemies/peasant.tscn" id="6_l7vca"]
-[ext_resource type="PackedScene" uid="uid://cqs87nicsh8hm" path="res://Enemies/archer.tscn" id="7_3qem8"]
+[ext_resource type="PackedScene" uid="uid://1x5d3t4cjge6" path="res://Enemies/archer.tscn" id="7_3qem8"]
 [ext_resource type="PackedScene" uid="uid://5u6bixnqfk7x" path="res://Objects/parallax_night.tscn" id="7_g3pu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8lqa"]
@@ -56,5 +56,6 @@ rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_im26i")
 
 [node name="ParallaxNight" parent="." instance=ExtResource("7_g3pu0")]
+scroll_offset = Vector2(129.826, 423.397)
 
 [connection signal="body_entered" from="Sprite-coffin/Area2d" to="Sprite-coffin/Area2d" method="_on_body_entered"]

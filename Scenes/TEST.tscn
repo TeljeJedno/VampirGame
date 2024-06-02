@@ -412,6 +412,7 @@ _data = {
 [node name="Test" type="Node2D"]
 
 [node name="BodyPoly" type="Node2D" parent="."]
+position = Vector2(-266, -506)
 
 [node name="Rest" type="Polygon2D" parent="BodyPoly"]
 position = Vector2(-4, 9)
@@ -476,6 +477,7 @@ uv = PackedVector2Array(344, 944, 336, 1024, 536, 1024, 544, 984, 416, 992, 392,
 bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Pelvis/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Pelvis/RTh", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Pelvis/RTh/RAn", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Pelvis/RTh/RAn/RFt", PackedFloat32Array(1, 1, 1, 1, 1, 1), "Pelvis/LTh", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Pelvis/LTh/LAn", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Pelvis/LTh/LAn/LFt", PackedFloat32Array(0, 0, 0, 0, 0, 0)]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2(-266, -506)
 
 [node name="Pelvis" type="Bone2D" parent="Skeleton2D"]
 position = Vector2(269, 503)
