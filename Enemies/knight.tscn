@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1ph5cok74t23"]
 
-[ext_resource type="Script" path="res://Scripts/knight.gd" id="1_ox3tu"]
+[ext_resource type="Script" path="res://Scripts/knight_scr.gd" id="1_7ava8"]
 [ext_resource type="Texture2D" uid="uid://ygf203yvudwu" path="res://Sprites/grayCoin.png" id="2_5r8ig"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hn3ft"]
@@ -25,7 +25,7 @@ radius = 59.14
 size = Vector2(60, 20)
 
 [node name="Knight" type="Node2D"]
-script = ExtResource("1_ox3tu")
+script = ExtResource("1_7ava8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s8wno")

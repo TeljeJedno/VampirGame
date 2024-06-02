@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbqk7hw2yhhau"]
 
-[ext_resource type="Script" path="res://Scripts/peasant.gd" id="1_i4uwe"]
+[ext_resource type="Script" path="res://Scripts/peasant_scr.gd" id="1_i4uwe"]
 [ext_resource type="Texture2D" uid="uid://c13d0knjdlbcm" path="res://Sprites/redCoin.png" id="2_lvd2m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfmg5"]

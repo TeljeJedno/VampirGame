@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqs87nicsh8hm"]
+
+[ext_resource type="Script" path="res://Scripts/archer_scr.gd" id="1_2anwo"]
+[ext_resource type="Texture2D" uid="uid://mco1lyi3bfeg" path="res://Sprites/greenCoin.png" id="2_acf5n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ompbi"]
+atlas = ExtResource("2_acf5n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8wno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ompbi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gyv0p"]
+radius = 200.0
+
+[node name="Archer" type="Node2D"]
+script = ExtResource("1_2anwo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s8wno")
+
+[node name="BehaviourTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="AgroArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AgroArea"]
+shape = SubResource("CircleShape2D_gyv0p")
+
+[connection signal="timeout" from="BehaviourTimer" to="." method="_on_behaviour_timer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="body_entered" from="AgroArea" to="." method="_on_agro_area_body_entered"]
+[connection signal="body_exited" from="AgroArea" to="." method="_on_agro_area_body_exited"]
