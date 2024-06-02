@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bv8wap0mkcvu5"]
 
-[ext_resource type="Texture2D" uid="uid://b5xffa1o3dxl8" path="res://Sprites/bg_2.png" id="1_pnj7j"]
-[ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="2_254jb"]
-[ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="3_bmw5r"]
-[ext_resource type="PackedScene" path="res://Objects/stake.tscn" id="4_frxy8"]
+[ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ht775"]
+[ext_resource type="Texture2D" uid="uid://b5xffa1o3dxl8" path="res://Sprites/bg_2.png" id="1_yskyb"]
+[ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="2_vflu1"]
+[ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="4_4acey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nnso"]
 size = Vector2(20.1297, 20)
@@ -13,7 +13,7 @@ position = Vector2(-69, 163)
 
 [node name="Bg2" type="Sprite2D" parent="."]
 position = Vector2(2605, -19)
-texture = ExtResource("1_pnj7j")
+texture = ExtResource("1_yskyb")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Bg2"]
 position = Vector2(13, -50)
@@ -26,19 +26,19 @@ shape = SubResource("RectangleShape2D_7nnso")
 [node name="Platforms and walls" type="Node2D" parent="."]
 position = Vector2(344, -74)
 
-[node name="StaticBody2D2" parent="Platforms and walls" instance=ExtResource("2_254jb")]
+[node name="StaticBody2D2" parent="Platforms and walls" instance=ExtResource("2_vflu1")]
 position = Vector2(1226, 170)
 rotation = -1.61132e-06
 scale = Vector2(1.84064, 0.587499)
 
-[node name="StaticBody2D" parent="Platforms and walls" instance=ExtResource("2_254jb")]
+[node name="StaticBody2D" parent="Platforms and walls" instance=ExtResource("2_vflu1")]
 position = Vector2(-519, -57)
 scale = Vector2(-1.4996, -29.4368)
 
-[node name="Player" parent="." instance=ExtResource("3_bmw5r")]
+[node name="Player" parent="." instance=ExtResource("1_ht775")]
 position = Vector2(411, 47)
 
 [node name="SpikesAndObstacles" type="Node2D" parent="."]
 
-[node name="Stake" parent="SpikesAndObstacles" instance=ExtResource("4_frxy8")]
-position = Vector2(1758, 200)
+[node name="Stake" parent="SpikesAndObstacles" instance=ExtResource("4_4acey")]
+position = Vector2(762, 243)
