@@ -4,12 +4,15 @@ enum BEHAVIOURS {IDLE, ROAM, RUN, CHASE, RETURNING}
 var behaviour = BEHAVIOURS.IDLE
 var behaviourTimer = 2
 @onready var behaviour_timer = $BehaviourTimer
+@onready var attack_timer = $AttackTimer
+@onready var relax_timer = $RelaxTimer
+@onready var damage_shape = $DamageArea/DamageShape
 
 var move_spd_base = 100
 var move_spd = 30
 var move_dir = 0
 
-
+var attacking
 var originPos
 var target: CharacterBody2D
 var moveDist = 600
@@ -32,10 +35,14 @@ func _process(delta):
 		behaviour_timer.start(behaviourTimer + randf_range(-1, 1)) 
 
 	if abs(position.x - originPos.x) > moveDist : 
-		print("RETURNING") 
 		behaviour  = BEHAVIOURS.RETURNING
 		move_dir = sign(originPos.x - position.x)
-	
+		
+	if move_dir > 0:
+		scale = Vector2(-0.5,0.5)
+	else:
+		scale = Vector2(0.5,0.5)
+
 
 func _physics_process(delta):
 	position.x += move_dir * move_spd * delta
@@ -60,7 +67,6 @@ func _on_behaviour_timer_timeout():
 func _on_agro_area_body_entered(body):
 	if body.name == "Player":
 		target = body
-		print("CHASING")
 		behaviour = BEHAVIOURS.CHASE
 		move_dir = sign(body.position.x - position.x)
 		behaviour_timer.stop()
@@ -75,13 +81,16 @@ func _on_agro_area_body_exited(body):
 
 func _on_attack_area_body_entered(body):
 	if body.name == "Player":
-		print("attack")
-		#$AnimatedSprite.play(“the name of your animation”)	
-	pass # Replace with function body.
-	
+		attack_timer.start()
+
+func _on_attack_timer_timeout():
+	relax_timer.start()
+	damage_shape.disabled = false
+
+func _on_relax_timer_timeout():
+	damage_shape.disabled = true
+
 func _on_damage_area_body_entered(body):
 	if body.name == "Player":
-		print("damage player")
-	pass # Replace with function body.
-
-
+		body.change_hp(-20)
+		damage_shape.disabled = true

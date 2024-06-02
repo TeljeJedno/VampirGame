@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cco2yi8wu4isa"]
+[gd_scene load_steps=10 format=3 uid="uid://cco2yi8wu4isa"]
 
 [ext_resource type="Texture2D" uid="uid://i65sksykkmj" path="res://Night Levels/Night top color.png" id="1_knoj5"]
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ryalo"]
 [ext_resource type="Texture2D" uid="uid://cgwj4xp46txt" path="res://Sprites/Sprite-Coffin.png" id="2_x8y2i"]
 [ext_resource type="Script" path="res://Levels/Coffid.gd" id="3_t2kwc"]
+[ext_resource type="PackedScene" uid="uid://c1ph5cok74t23" path="res://Enemies/knight.tscn" id="7_5yplp"]
 [ext_resource type="Texture2D" uid="uid://dhdp5qh53wrvu" path="res://Sprites/night_bg.png" id="7_8s0fw"]
 [ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="8_o63xn"]
 
@@ -74,5 +75,8 @@ scale = Vector2(6, 1)
 position = Vector2(3024.5, -292)
 rotation = 1.5708
 scale = Vector2(6, 1)
+
+[node name="Knight" parent="." instance=ExtResource("7_5yplp")]
+position = Vector2(-4987, 666)
 
 [connection signal="body_entered" from="Sprite-coffin/Area2d" to="Sprite-coffin/Area2d" method="_on_body_entered"]

@@ -37,6 +37,13 @@ sprite_frames = SubResource("SpriteFrames_s8wno")
 [node name="BehaviourTimer" type="Timer" parent="."]
 wait_time = 2.0
 
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="RelaxTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="AgroArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AgroArea"]
@@ -52,7 +59,7 @@ debug_color = Color(0.997531, 0, 0.163863, 0.42)
 
 [node name="DamageArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+[node name="DamageShape" type="CollisionShape2D" parent="DamageArea"]
 position = Vector2(-40, 0)
 shape = SubResource("RectangleShape2D_ckk8m")
 disabled = true
@@ -65,8 +72,10 @@ position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_44rkc")
 
 [connection signal="timeout" from="BehaviourTimer" to="." method="_on_behaviour_timer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="RelaxTimer" to="." method="_on_relax_timer_timeout"]
 [connection signal="body_entered" from="AgroArea" to="." method="_on_agro_area_body_entered"]
 [connection signal="body_exited" from="AgroArea" to="." method="_on_agro_area_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
-[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
 [connection signal="body_entered" from="DamageArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
