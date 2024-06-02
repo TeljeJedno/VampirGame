@@ -1,16 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1ycb4gducicl"]
+[gd_scene load_steps=12 format=3 uid="uid://c2s0elmjmbmf7"]
 
-[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_7kwcp"]
-[ext_resource type="Texture2D" uid="uid://ciprwq72p8byq" path="res://ui/bg_ui_new.png" id="2_40n28"]
-[ext_resource type="Texture2D" uid="uid://bdef4fco4wxer" path="res://Sprites/btn_play_1.png" id="3_6manm"]
-[ext_resource type="Texture2D" uid="uid://dc3rq1yenrmon" path="res://Sprites/btn_play_2.png" id="4_krcwk"]
-[ext_resource type="Texture2D" uid="uid://g7pyhi6m5ewj" path="res://Sprites/btn_settings_1.png" id="5_1lbln"]
-[ext_resource type="Texture2D" uid="uid://clpphyrise2kd" path="res://Sprites/btn_settings_2.png" id="6_wwvi1"]
-[ext_resource type="Texture2D" uid="uid://cwckd1cl34l0c" path="res://Sprites/btn_quit_1.png" id="7_sfrij"]
-[ext_resource type="Texture2D" uid="uid://c5n5halqrb4r6" path="res://Sprites/btn_quit_2.png" id="8_nh8dh"]
-[ext_resource type="Texture2D" uid="uid://rp55abp0dbkr" path="res://ui/title.png" id="9_yxdwl"]
-[ext_resource type="Texture2D" uid="uid://cjstb7idoxt6a" path="res://ui/ui_moon_bouncing.png" id="10_5x6au"]
-[ext_resource type="Texture2D" uid="uid://cnxumtrhxcmb5" path="res://ui/ui_sun_rotating.png" id="11_u02sv"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_7x37d"]
+[ext_resource type="Texture2D" uid="uid://ciprwq72p8byq" path="res://ui/bg_ui_new.png" id="2_8yx6d"]
+[ext_resource type="Texture2D" uid="uid://c5n5halqrb4r6" path="res://Sprites/btn_quit_2.png" id="7_0107f"]
+[ext_resource type="Texture2D" uid="uid://cwckd1cl34l0c" path="res://Sprites/btn_quit_1.png" id="8_bcitw"]
+[ext_resource type="Texture2D" uid="uid://rp55abp0dbkr" path="res://ui/title.png" id="9_x23vj"]
+[ext_resource type="Texture2D" uid="uid://cjstb7idoxt6a" path="res://ui/ui_moon_bouncing.png" id="10_cbxrm"]
+[ext_resource type="Texture2D" uid="uid://cnxumtrhxcmb5" path="res://ui/ui_sun_rotating.png" id="11_t5g5d"]
 
 [sub_resource type="Animation" id="Animation_7qyp8"]
 length = 0.001
@@ -136,12 +132,12 @@ offset_right = 93.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7kwcp")
+script = ExtResource("1_7x37d")
 
 [node name="BgUiNew" type="Sprite2D" parent="."]
 position = Vector2(711, 449)
 scale = Vector2(0.814792, 0.909395)
-texture = ExtResource("2_40n28")
+texture = ExtResource("2_8yx6d")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -160,36 +156,24 @@ scale = Vector2(0.953243, 0.999893)
 layout_mode = 2
 alignment = 1
 
-[node name="Play Game" type="TextureButton" parent="MarginContainer/Buttons MainMenu"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("4_krcwk")
-texture_hover = ExtResource("3_6manm")
-
-[node name="Settings" type="TextureButton" parent="MarginContainer/Buttons MainMenu"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("6_wwvi1")
-texture_hover = ExtResource("5_1lbln")
-
 [node name="Quit" type="TextureButton" parent="MarginContainer/Buttons MainMenu"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("8_nh8dh")
-texture_hover = ExtResource("7_sfrij")
+texture_normal = ExtResource("7_0107f")
+texture_hover = ExtResource("8_bcitw")
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(647, 241)
 scale = Vector2(1.21229, 0.953155)
-texture = ExtResource("9_yxdwl")
+texture = ExtResource("9_x23vj")
 
 [node name="UiMoonBouncing" type="Sprite2D" parent="."]
 position = Vector2(175, -181)
-texture = ExtResource("10_5x6au")
+texture = ExtResource("10_cbxrm")
 
 [node name="UiSunRotating" type="Sprite2D" parent="."]
 position = Vector2(1134, -168)
-texture = ExtResource("11_u02sv")
+texture = ExtResource("11_t5g5d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -197,6 +181,5 @@ libraries = {
 }
 autoplay = "sun "
 
-[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Play Game" to="." method="_on_play_game_pressed"]
-[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons MainMenu/Quit" to="." method="_on_quit_pressed"]
