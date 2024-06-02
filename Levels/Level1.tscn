@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv8wap0mkcvu5"]
+[gd_scene load_steps=10 format=3 uid="uid://bv8wap0mkcvu5"]
 
 [ext_resource type="Texture2D" uid="uid://dsvx1ta35v1ad" path="res://Sprites/bg_day.png" id="1_7nddg"]
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ht775"]
@@ -6,11 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="4_4acey"]
 [ext_resource type="PackedScene" uid="uid://b7g3dkjvxv4px" path="res://Scenes/coffin.tscn" id="5_8rqab"]
 [ext_resource type="FontFile" uid="uid://dgptphts8sush" path="res://Fonts/Amarante-Regular.ttf" id="6_7pdwf"]
+[ext_resource type="PackedScene" uid="uid://m8okwv3visvw" path="res://Objects/crate.tscn" id="7_3wnmr"]
+[ext_resource type="PackedScene" uid="uid://nxtm0sf4sauk" path="res://Objects/pagoda.tscn" id="8_os4pf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3p8t2"]
 font = ExtResource("6_7pdwf")
-font_size = 30
-outline_size = 2
+font_size = 27
+outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Level1" type="Node2D"]
@@ -119,7 +121,7 @@ metadata/_edit_lock_ = true
 position = Vector2(5855, 35)
 
 [node name="Player" parent="." instance=ExtResource("1_ht775")]
-position = Vector2(4046, -149)
+position = Vector2(138, 54)
 forceRight = true
 
 [node name="Label" type="Label" parent="."]
@@ -130,15 +132,45 @@ offset_bottom = 128.0
 text = "Use SPACE for jump or Spikes would kill you."
 label_settings = SubResource("LabelSettings_3p8t2")
 horizontal_alignment = 1
-autowrap_mode = 1
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="Label"]
 layout_mode = 0
-offset_left = 2165.0
-offset_top = -135.0
-offset_right = 2477.0
-offset_bottom = -6.0
-text = "Use SPACE for jump or Spikes would kill you."
+offset_left = 2145.0
+offset_top = -166.0
+offset_right = 2457.0
+offset_bottom = -5.0
+scale = Vector2(1, 1.0228)
+text = "Colliding with obsitcales will slow you down.
+Be careful"
 label_settings = SubResource("LabelSettings_3p8t2")
 horizontal_alignment = 1
-autowrap_mode = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 3218.0
+offset_top = -142.0
+offset_right = 3530.0
+offset_bottom = 19.0
+scale = Vector2(1, 1.0228)
+text = "You can use SHIFT for Dash
+To go thorugh walls, but that consumes energy"
+label_settings = SubResource("LabelSettings_3p8t2")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Crate2" parent="." instance=ExtResource("7_3wnmr")]
+position = Vector2(2976, 80)
+scale = Vector2(0.311987, 0.275808)
+
+[node name="Pagoda" parent="." instance=ExtResource("8_os4pf")]
+position = Vector2(4736, 99)
+scale = Vector2(1.80001, 1)
+
+[node name="Pagoda2" parent="." instance=ExtResource("8_os4pf")]
+position = Vector2(4739, -14)
+scale = Vector2(1.28, 1)
+
+[node name="Pagoda3" parent="." instance=ExtResource("8_os4pf")]
+position = Vector2(4739, -129)

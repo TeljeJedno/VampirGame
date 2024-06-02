@@ -1,10 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://m8okwv3visvw"]
+[gd_scene load_steps=4 format=3 uid="uid://m8okwv3visvw"]
+
+[ext_resource type="Texture2D" uid="uid://b2fbkgvp8w4l6" path="res://Objects/crate.png" id="1_alr8y"]
+[ext_resource type="Script" path="res://Objects/crate.gd" id="1_xccr3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k2o1"]
 
 [node name="Crate2" type="Area2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1k2o1")
+script = ExtResource("1_xccr3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, 0)
+scale = Vector2(0.578512, 1)
+texture = ExtResource("1_alr8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(21.1627, 22.6934)
+shape = SubResource("RectangleShape2D_1k2o1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -9,14 +9,16 @@ radius = 30.0
 height = 200.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1asj"]
-size = Vector2(506, 200)
+size = Vector2(300, 200)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_2xwux")
 
 [node name="moon" parent="." instance=ExtResource("3_jks7l")]
-position = Vector2(784, -910)
+z_index = -1
+position = Vector2(200, -846)
+scale = Vector2(0.501894, 0.501894)
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_v331d")]
 position = Vector2(-3.8147e-06, -7.62939e-06)
@@ -37,7 +39,6 @@ one_shot = true
 [node name="AttackRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
-position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_h1asj")
 debug_color = Color(0.989781, 0, 0.286363, 0.42)
 
