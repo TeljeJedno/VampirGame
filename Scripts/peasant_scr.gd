@@ -29,7 +29,6 @@ func _process(delta):
 		behaviour_timer.start(behaviourTimer) 
 	
 	if abs(position.x - originPos.x) > moveDist : 
-		print("RETURNING") 
 		behaviour  = BEHAVIOURS.RETURNING
 		move_dir = sign(originPos.x - position.x)
 
@@ -41,17 +40,14 @@ func _on_behaviour_timer_timeout():
 	match behaviour:
 		BEHAVIOURS.IDLE:
 			move_dir = 0
-			print("idleing")
 		BEHAVIOURS.ROAM: 
 			move_spd = move_spd_base
 			var ranNum =  bool(randi() % 2)
 			if ranNum: move_dir = -1
 			else: move_dir = 1 
-			print("roaming")
 		BEHAVIOURS.RUN: 
 			move_spd = move_spd_base * 2
 			var ranNum =  bool(randi() % 2)
 			if ranNum: move_dir = -1
 			else: move_dir = 1 
-			print("running")
 			

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbqk7hw2yhhau"]
+[gd_scene load_steps=6 format=3 uid="uid://dbqk7hw2yhhau"]
 
 [ext_resource type="Script" path="res://Scripts/peasant_scr.gd" id="1_i4uwe"]
 [ext_resource type="Texture2D" uid="uid://dwd0c5iiiqjp3" path="res://Sprites/peasant copy.png" id="2_ysahv"]
@@ -18,6 +18,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvbrd"]
+size = Vector2(60, 86)
+
 [node name="Peasant" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_i4uwe")
@@ -27,5 +30,11 @@ sprite_frames = SubResource("SpriteFrames_s8wno")
 
 [node name="BehaviourTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(6, -15)
+shape = SubResource("RectangleShape2D_kvbrd")
 
 [connection signal="timeout" from="BehaviourTimer" to="." method="_on_behaviour_timer_timeout"]

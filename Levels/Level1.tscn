@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ht775"]
 [ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="2_vflu1"]
 [ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="4_4acey"]
-[ext_resource type="PackedScene" uid="uid://b7g3dkjvxv4px" path="res://Scenes/coffin.tscn" id="5_8rqab"]
+[ext_resource type="PackedScene" path="res://Scenes/coffin.tscn" id="5_8rqab"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(28, 162)

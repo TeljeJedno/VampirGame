@@ -10,7 +10,7 @@ var bodies = []
 @onready var action_timer = $Timer
 @onready var attack_range = $AttackRange
 @onready var cooldown_timer = $CooldownTimer
-
+@onready var attack_cooldown = $AttackCooldown
 @export var forceRight = false
 
 
@@ -54,12 +54,18 @@ func _physics_process(delta):
 			dash = true;
 			dashable = false
 		if dash == true:
+			self.collision_mask = 2
 			velocity.x = direction * SPEED * 4
 		else:	
+			self.collision_mask = 1
 			velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$PlayerBody/AnimationPlayer.play("RESET")
+		
+	#Kill
+	if Input.is_action_just_pressed("Kill"):
+		checkArea()
 
 	move_and_slide()
 
@@ -87,20 +93,32 @@ func checkArea():
 		return
 	else:
 		for b in bodies:
-			body_names.append(b.name)
+			if(b.name != "Player"):
+				body_names.append(b.get_parent().name)
+				
 		if "Knight" in body_names:
 			pass
+			
 		elif "Peasant" in body_names:
+			print("Peasant")
 			for b in bodies:
-				if b.name == "Peasant":
-					b.queue_free()	
+				if(b.name != "Player"):
+					if b.get_parent().name == "Peasant":
+						self.global_position.x = b.global_position.x
+						change_hp(20)
+						b.get_parent().queue_free()
+						
 		elif "Archer" in body_names:
 			for b in bodies:
-				if b.name == "Archer":
-					b.queue_free()	
+				if(b.name != "Player"):
+					if b.get_parent().name == "Archer":
+						change_hp(30)
+						self.global_position.x = b.global_position.x
+						b.get_parent().queue_free()
 
 
 func _on_cooldown_timer_timeout():
 	dashable = true # Replace with function body.
-	
 
+func _on_attack_cooldown_timeout(b):
+	pass

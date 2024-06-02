@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1ph5cok74t23"]
+[gd_scene load_steps=8 format=3 uid="uid://c1ph5cok74t23"]
 
 [ext_resource type="Script" path="res://Scripts/knight_scr.gd" id="1_7ava8"]
 [ext_resource type="Texture2D" uid="uid://eqgq3qbnj332" path="res://Sprites/knight copy.png" id="2_rqvkd"]
@@ -23,6 +23,9 @@ size = Vector2(1000, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckk8m"]
 size = Vector2(200, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44rkc"]
+size = Vector2(68, 80)
 
 [node name="Knight" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -55,9 +58,15 @@ shape = SubResource("RectangleShape2D_ckk8m")
 disabled = true
 debug_color = Color(0.997531, 0, 0.163863, 0.42)
 
+[node name="KnightBody" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KnightBody"]
+position = Vector2(24, 0)
+shape = SubResource("RectangleShape2D_44rkc")
+
 [connection signal="timeout" from="BehaviourTimer" to="." method="_on_behaviour_timer_timeout"]
 [connection signal="body_entered" from="AgroArea" to="." method="_on_agro_area_body_entered"]
 [connection signal="body_exited" from="AgroArea" to="." method="_on_agro_area_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
-[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
 [connection signal="body_entered" from="DamageArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
