@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7xlfdrvng8t1"]
+
+[ext_resource type="Texture2D" uid="uid://b7srbd18ei02i" path="res://Sprites/Enemies/Pop/priest.png" id="1_5g4sc"]
+[ext_resource type="Texture2D" uid="uid://cou7ajqtb4phf" path="res://Sprites/Enemies/Pop/krst.PNG" id="2_o1squ"]
+
+[sub_resource type="Animation" id="Animation_c1gmk"]
+resource_name = "Walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Staff:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(29, 67), Vector2(-14, -40), Vector2(29, 67)]
+}
+
+[sub_resource type="Animation" id="Animation_mx88t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Staff:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fckb7"]
+_data = {
+"RESET": SubResource("Animation_mx88t"),
+"Walk": SubResource("Animation_c1gmk")
+}
+
+[node name="PriestAnim" type="Node2D"]
+
+[node name="Body" type="Polygon2D" parent="."]
+position = Vector2(-6, -7)
+texture = ExtResource("1_5g4sc")
+polygon = PackedVector2Array(98.2456, 38.5965, 229.825, 910.526, 194.231, 1055.77, 742.105, 1054.39, 642.105, 675.439, 529.825, 222.807, 587.719, 101.754, 433.333, 89.4737, 401.754, 101.754, 308.772, -24.5614)
+uv = PackedVector2Array(98.2456, 38.5965, 229.825, 910.526, 192.982, 1115.79, 742.105, 1054.39, 642.105, 675.439, 529.825, 222.807, 587.719, 101.754, 433.333, 89.4737, 401.754, 101.754, 308.772, -24.5614)
+
+[node name="Staff" type="Polygon2D" parent="."]
+texture = ExtResource("2_o1squ")
+polygon = PackedVector2Array(27, 124, 131, 128, 130, 30, 185, 26, 175, 114, 278, 129, 275, 180, 183, 172, 182.178, 838.614, 143.564, 1035.64, 99.0099, 1021.78, 95.0495, 774.257, 123.762, 409.901, 95.0495, 304.95, 117.822, 273.267, 120.792, 169.307, 18.8119, 168.317)
+uv = PackedVector2Array(27, 124, 131, 128, 130, 30, 185, 26, 175, 114, 278, 129, 275, 180, 183, 172, 182.178, 838.614, 143.564, 1035.64, 99.0099, 1021.78, 95.0495, 774.257, 123.762, 409.901, 95.0495, 304.95, 117.822, 273.267, 120.792, 169.307, 18.8119, 168.317)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fckb7")
+}
