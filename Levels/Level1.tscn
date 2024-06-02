@@ -110,5 +110,5 @@ metadata/_edit_lock_ = true
 position = Vector2(777, 117)
 metadata/_edit_lock_ = true
 
-[node name="Node2D" parent="." instance=ExtResource("5_8rqab")]
+[node name="Coffin" parent="." instance=ExtResource("5_8rqab")]
 position = Vector2(5855, 35)
