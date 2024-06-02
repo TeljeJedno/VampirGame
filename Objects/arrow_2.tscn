@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmysq2qwt4vch"]
+
+[ext_resource type="Script" path="res://Scripts/arrow_2.gd" id="1_28kx0"]
+[ext_resource type="Texture2D" uid="uid://du5pte0hgywh2" path="res://Sprites/slash.png" id="1_bkd2c"]
+
+[sub_resource type="Curve2D" id="Curve2D_twn3c"]
+_data = {
+"points": PackedVector2Array(0, 0, 150, -900, 0, 2, 0, 0, 0, 0, 300, 0)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oabf"]
+size = Vector2(78.0287, 20)
+
+[node name="Arrow2" type="Path2D"]
+curve = SubResource("Curve2D_twn3c")
+script = ExtResource("1_28kx0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(0, 2)
+rotation = -1.40565
+
+[node name="Area2D" type="Area2D" parent="PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Area2D"]
+scale = Vector2(0.05, 0.1)
+texture = ExtResource("1_bkd2c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3oabf")

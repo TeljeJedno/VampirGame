@@ -6,7 +6,7 @@ var behaviourTimer = 2
 @onready var behaviour_timer = $BehaviourTimer
 @onready var shoot_timer = $ShootTimer
 
-const projectile = preload("res://Objects/arrow.tscn")
+const ARROW_2 = preload("res://Objects/arrow_2.tscn")
 
 var move_spd_base = 1
 var move_spd = 1
@@ -14,7 +14,7 @@ var move_dir = 0
 
 var originPos
 var target: CharacterBody2D
-var shootSpeed = 1
+var shootSpeed = 2
 var moveDist = 200
 
 # Called when the node enters the scene tree for the first time.
@@ -68,10 +68,9 @@ func _on_agro_area_body_entered(body):
 	pass # Replace with function body.
 
 func shoot():
-	var instance = projectile.instantiate()
+	var instance = ARROW_2.instantiate()
 	instance.position = global_position
-	instance.rotation = rotation
-	instance.target = target.position
+	instance.targetPos = target.position - global_position
 	get_parent().add_child.call_deferred(instance)
 	print("SHOT")
 	pass
