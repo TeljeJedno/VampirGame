@@ -298,6 +298,7 @@ polygon = PackedVector2Array(-4.28571, 10.2857, 82.8571, 190.571, 72, 231.714, 8
 uv = PackedVector2Array(-4.28571, 10.2857, 82.8571, 190.571, 72, 231.714, 83.7143, 244.286, 243.714, 241.429, 135.143, 200.571, 83.7143, 37.1429, 71.4286, -4, 48, 9.71428, -3.42857, 2)
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2(1, 0)
 
 [node name="e" type="Bone2D" parent="Skeleton2D"]
 position = Vector2(287, 246)
