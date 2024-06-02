@@ -5,7 +5,7 @@ extends Control
 
 
 func _on_play_game_pressed():
-	get_tree().change_scene_to_file("res://Levels/NIGHT_LEVEL_TEST.tscn")
+	get_tree().change_scene_to_file("res://Levels/Level1.tscn")
 
 
 
