@@ -12,5 +12,6 @@ scale = Vector2(4.89041, 1.16896)
 texture = ExtResource("1_uujpu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(6.79787, 2.29599)
+position = Vector2(-0.204482, -2.14577e-06)
+scale = Vector2(6.88923, 2.32917)
 shape = SubResource("RectangleShape2D_rnnq3")
