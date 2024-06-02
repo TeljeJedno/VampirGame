@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cco2yi8wu4isa"]
+[gd_scene load_steps=14 format=3 uid="uid://cco2yi8wu4isa"]
 
 [ext_resource type="Texture2D" uid="uid://i65sksykkmj" path="res://Night Levels/Night top color.png" id="1_knoj5"]
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ryalo"]
@@ -6,7 +6,11 @@
 [ext_resource type="Script" path="res://Levels/Coffid.gd" id="3_t2kwc"]
 [ext_resource type="PackedScene" uid="uid://c1ph5cok74t23" path="res://Enemies/knight.tscn" id="7_5yplp"]
 [ext_resource type="Texture2D" uid="uid://dhdp5qh53wrvu" path="res://Sprites/night_bg.png" id="7_8s0fw"]
+[ext_resource type="PackedScene" uid="uid://1x5d3t4cjge6" path="res://Enemies/archer.tscn" id="8_jtgso"]
 [ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="8_o63xn"]
+[ext_resource type="Texture2D" uid="uid://cluoq0mhgbcgx" path="res://Sprites/house_1.png" id="9_cgb7j"]
+[ext_resource type="PackedScene" uid="uid://dbqk7hw2yhhau" path="res://Enemies/peasant.tscn" id="11_6734x"]
+[ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="11_xsmbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8lqa"]
 size = Vector2(92, 144)
@@ -18,8 +22,8 @@ size = Vector2(92, 144)
 [node name="BG" type="Node2D" parent="."]
 
 [node name="NightTopColor" type="Sprite2D" parent="BG"]
-position = Vector2(-1108.5, -627)
-scale = Vector2(176.891, 16.2187)
+position = Vector2(-1108.5, -1431)
+scale = Vector2(176.891, 41.3437)
 texture = ExtResource("1_knoj5")
 
 [node name="Sprite2D" type="Sprite2D" parent="BG"]
@@ -36,7 +40,7 @@ position = Vector2(2666, 475)
 texture = ExtResource("7_8s0fw")
 
 [node name="Player" parent="." instance=ExtResource("1_ryalo")]
-position = Vector2(-5521, 645)
+position = Vector2(-5528, -134)
 
 [node name="Sprite-coffin" type="Sprite2D" parent="."]
 position = Vector2(2194, 735)
@@ -66,17 +70,178 @@ position = Vector2(3000, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_im26i")
 
+[node name="Top" type="CollisionShape2D" parent="LevelBounds"]
+position = Vector2(-1088.5, -1808)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_im26i")
+
 [node name="StaticBody2D" parent="LevelBounds" instance=ExtResource("8_o63xn")]
-position = Vector2(-5014.5, -292)
+position = Vector2(-5012.5, -892)
 rotation = 1.5708
-scale = Vector2(6, 1)
+scale = Vector2(15, 1)
 
 [node name="StaticBody2D2" parent="LevelBounds" instance=ExtResource("8_o63xn")]
-position = Vector2(3024.5, -292)
+position = Vector2(-4071.5, -499)
 rotation = 1.5708
-scale = Vector2(6, 1)
+scale = Vector2(3, 1)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-3553, 632)
+rotation = 1.5708
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-3323, 568)
+rotation = 1.5708
+scale = Vector2(3, 1)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-3080, 491)
+rotation = 1.5708
+scale = Vector2(4, 1)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(2326, -220)
+rotation = 1.5708
+scale = Vector2(15, 1)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-5239, -68)
+scale = Vector2(7, 1)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-4390, -69)
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-5501, 516)
+scale = Vector2(1, 1)
+
+[node name="Archer" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-5487, 446)
+
+[node name="House1" type="Sprite2D" parent="."]
+position = Vector2(-5265, 525)
+texture = ExtResource("9_cgb7j")
+
+[node name="House3" type="Sprite2D" parent="."]
+position = Vector2(-1763, -979)
+texture = ExtResource("9_cgb7j")
+
+[node name="Archer2" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-4483, -159)
+
+[node name="Archer3" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-4280, -156)
 
 [node name="Knight" parent="." instance=ExtResource("7_5yplp")]
-position = Vector2(-4987, 666)
+position = Vector2(-4935, 699)
+
+[node name="Peasant" parent="." instance=ExtResource("11_6734x")]
+position = Vector2(-4849, 698)
+
+[node name="Peasant2" parent="." instance=ExtResource("11_6734x")]
+position = Vector2(-4288, 700)
+
+[node name="Peasant3" parent="." instance=ExtResource("11_6734x")]
+position = Vector2(-4073, 700)
+
+[node name="Spikes" parent="." instance=ExtResource("11_xsmbm")]
+position = Vector2(-5130, -113)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spikes2" parent="." instance=ExtResource("11_xsmbm")]
+position = Vector2(-4865, -114)
+scale = Vector2(0.5, 0.5)
+
+[node name="Archer4" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-2909, 690)
+scale = Vector2(-0.5, 0.5)
+
+[node name="Archer5" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-2583, 694)
+scale = Vector2(-0.5, 0.5)
+
+[node name="Archer6" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-3553, 121)
+scale = Vector2(-0.5, 0.5)
+
+[node name="Peasant4" parent="." instance=ExtResource("11_6734x")]
+position = Vector2(-3555, 439)
+
+[node name="Peasant5" parent="." instance=ExtResource("11_6734x")]
+position = Vector2(-3081, 154)
+
+[node name="Knight2" parent="." instance=ExtResource("7_5yplp")]
+position = Vector2(-2402, 689)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-3579, 191)
+scale = Vector2(1.925, 1.169)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-2519, 224)
+scale = Vector2(1.925, 1.169)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-2109, -28)
+scale = Vector2(1.925, 1.169)
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-2702, -589)
+scale = Vector2(1.925, 1.169)
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-1734, -704)
+scale = Vector2(7, 1.169)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-2684, -169)
+scale = Vector2(1.925, 1.169)
+
+[node name="StaticBody2D13" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-3462, -304)
+scale = Vector2(6, 1.169)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("8_o63xn")]
+position = Vector2(-3768, -86)
+scale = Vector2(0.535, 9.809)
+
+[node name="House2" type="Sprite2D" parent="."]
+position = Vector2(-3471, -553)
+texture = ExtResource("9_cgb7j")
+
+[node name="Peasant6" parent="." instance=ExtResource("11_6734x")]
+position = Vector2(-3211, -393)
+
+[node name="Peasant7" parent="." instance=ExtResource("11_6734x")]
+position = Vector2(-3077, -396)
+
+[node name="Archer7" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-2676, -241)
+
+[node name="Archer8" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-2676, -241)
+
+[node name="Knight3" parent="." instance=ExtResource("7_5yplp")]
+position = Vector2(-3352, -385)
+
+[node name="Knight4" parent="." instance=ExtResource("7_5yplp")]
+position = Vector2(-1437, 689)
+
+[node name="Archer9" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-1616, -783)
+
+[node name="Archer10" parent="." instance=ExtResource("8_jtgso")]
+position = Vector2(-1875, -781)
+
+[node name="Peasant8" parent="." instance=ExtResource("11_6734x")]
+position = Vector2(-1395, -783)
+
+[node name="Peasant9" parent="." instance=ExtResource("11_6734x")]
+position = Vector2(-2061, -789)
+
+[node name="Knight5" parent="." instance=ExtResource("7_5yplp")]
+position = Vector2(-1674, -782)
 
 [connection signal="body_entered" from="Sprite-coffin/Area2d" to="Sprite-coffin/Area2d" method="_on_body_entered"]

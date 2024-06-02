@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvbrd"]
-size = Vector2(60, 86)
+size = Vector2(90, 86)
 
 [node name="Peasant" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -31,10 +31,10 @@ sprite_frames = SubResource("SpriteFrames_s8wno")
 [node name="BehaviourTimer" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="PeasantBody" type="CharacterBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(6, -15)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PeasantBody"]
+position = Vector2(7, -15)
 shape = SubResource("RectangleShape2D_kvbrd")
 
 [connection signal="timeout" from="BehaviourTimer" to="." method="_on_behaviour_timer_timeout"]

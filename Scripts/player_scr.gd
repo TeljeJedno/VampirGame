@@ -52,6 +52,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("dash") and dashable == true:			
 			action_timer.start()
 			dash = true;
+			change_hp(-10)
 			dashable = false
 		if dash == true:
 			self.collision_mask = 2
@@ -94,24 +95,24 @@ func checkArea():
 	else:
 		for b in bodies:
 			if(b.name != "Player"):
-				body_names.append(b.get_parent().name)
+				body_names.append(b.name)
 				
-		if "Knight" in body_names:
+		if "KnightBody" in body_names:
 			pass
 			
-		elif "Peasant" in body_names:
+		elif "PeasantBody" in body_names:
 			print("Peasant")
 			for b in bodies:
 				if(b.name != "Player"):
-					if b.get_parent().name == "Peasant":
+					if b.name == "PeasantBody":
 						self.global_position.x = b.global_position.x
 						change_hp(20)
 						b.get_parent().queue_free()
 						
-		elif "Archer" in body_names:
+		elif "ArcherBody" in body_names:
 			for b in bodies:
 				if(b.name != "Player"):
-					if b.get_parent().name == "Archer":
+					if b.name == "ArcherBody":
 						change_hp(30)
 						self.global_position.x = b.global_position.x
 						b.get_parent().queue_free()

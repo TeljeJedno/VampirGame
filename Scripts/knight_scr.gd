@@ -7,6 +7,7 @@ var behaviourTimer = 2
 @onready var attack_timer = $AttackTimer
 @onready var relax_timer = $RelaxTimer
 @onready var damage_shape = $DamageArea/DamageShape
+@onready var ray_cast_2d = $RayCast2D
 
 var move_spd_base = 100
 var move_spd = 30
@@ -17,6 +18,7 @@ var originPos
 var target: CharacterBody2D
 var moveDist = 600
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	move_spd = move_spd_base
@@ -26,6 +28,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if behaviour == BEHAVIOURS.CHASE: 
 		move_dir = sign(target.position.x - position.x)
 			
@@ -82,6 +85,8 @@ func _on_agro_area_body_exited(body):
 func _on_attack_area_body_entered(body):
 	if body.name == "Player":
 		attack_timer.start()
+	elif body.name == "PlatformShape":
+		move_dir = -1
 
 func _on_attack_timer_timeout():
 	relax_timer.start()

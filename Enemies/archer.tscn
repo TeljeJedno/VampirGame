@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://1x5d3t4cjge6"]
+[gd_scene load_steps=7 format=3 uid="uid://1x5d3t4cjge6"]
 
 [ext_resource type="Script" path="res://Scripts/archer_scr.gd" id="1_2anwo"]
 [ext_resource type="Texture2D" uid="uid://cg4b7n2yhvref" path="res://Sprites/archer copy.png" id="2_rt4kp"]
@@ -19,7 +19,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gyv0p"]
-radius = 1000.0
+radius = 1536.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xj6jr"]
+size = Vector2(154, 142)
 
 [node name="Archer" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -37,6 +40,12 @@ wait_time = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AgroArea"]
 shape = SubResource("CircleShape2D_gyv0p")
+
+[node name="ArcherBody" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArcherBody"]
+position = Vector2(-23, -21)
+shape = SubResource("RectangleShape2D_xj6jr")
 
 [connection signal="timeout" from="BehaviourTimer" to="." method="_on_behaviour_timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

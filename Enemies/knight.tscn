@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fanb2"]
-size = Vector2(1000, 200)
+size = Vector2(1535, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckk8m"]
 size = Vector2(200, 146)
@@ -38,16 +38,17 @@ sprite_frames = SubResource("SpriteFrames_s8wno")
 wait_time = 2.0
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
 one_shot = true
 
 [node name="RelaxTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="AgroArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AgroArea"]
-position = Vector2(33, 0)
+position = Vector2(-234.5, 0)
 shape = SubResource("RectangleShape2D_fanb2")
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -70,6 +71,10 @@ debug_color = Color(0.997531, 0, 0.163863, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KnightBody"]
 position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_44rkc")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(10, 0)
+target_position = Vector2(-174, 2)
 
 [connection signal="timeout" from="BehaviourTimer" to="." method="_on_behaviour_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
