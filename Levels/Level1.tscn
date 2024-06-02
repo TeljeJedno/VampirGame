@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://covrk6svmr1se" path="res://Objects/player.tscn" id="1_ht775"]
 [ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="2_vflu1"]
 [ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="4_4acey"]
-[ext_resource type="Texture2D" uid="uid://jlo6b8qe3a5t" path="res://Sprites/coffin_open.png" id="5_2rkfi"]
+[ext_resource type="PackedScene" uid="uid://b7g3dkjvxv4px" path="res://Scenes/coffin.tscn" id="5_8rqab"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(28, 162)
@@ -61,7 +61,7 @@ position = Vector2(3983, 564)
 scale = Vector2(-0.818061, -30.7229)
 
 [node name="Player" parent="." instance=ExtResource("1_ht775")]
-position = Vector2(411, 47)
+position = Vector2(4821, 52)
 forceRight = true
 
 [node name="SpikesAndObstacles" type="Node2D" parent="."]
@@ -110,6 +110,5 @@ metadata/_edit_lock_ = true
 position = Vector2(777, 117)
 metadata/_edit_lock_ = true
 
-[node name="CoffinOpen" type="Sprite2D" parent="."]
-position = Vector2(5852, -131)
-texture = ExtResource("5_2rkfi")
+[node name="Node2D" parent="." instance=ExtResource("5_8rqab")]
+position = Vector2(5855, 35)

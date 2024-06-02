@@ -12,3 +12,7 @@ func _on_settings_pressed():
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+
+func _on_play_game_pressed():
+	get_tree().change_scene_to_file("res://Levels/Level1.tscn")
