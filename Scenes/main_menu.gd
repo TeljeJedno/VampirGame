@@ -15,4 +15,4 @@ func _on_back_button_pressed():
 
 
 func _on_play_game_pressed():
-	get_tree().change_scene_to_file("res://Levels/Level1.tscn")
+	TransitionLayer.changeScene("res://Levels/Level1.tscn","1")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://nxtm0sf4sauk"]
+
+[ext_resource type="Texture2D" uid="uid://di0m81p7c5ain" path="res://Sprites/jap_wall.png" id="1_w7qay"]
+[ext_resource type="Texture2D" uid="uid://tufi10njx64e" path="res://Sprites/japanese_house.png" id="2_8wync"]
+
+[node name="Pagoda" type="Node2D"]
+
+[node name="JapWall" type="Sprite2D" parent="."]
+texture = ExtResource("1_w7qay")
+
+[node name="JapaneseHouse" type="Sprite2D" parent="."]
+position = Vector2(-2, -55)
+scale = Vector2(1.32, 1)
+texture = ExtResource("2_8wync")

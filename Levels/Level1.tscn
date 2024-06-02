@@ -5,17 +5,24 @@
 [ext_resource type="PackedScene" uid="uid://otwnrrehfv7t" path="res://Scenes/platform.tscn" id="2_vflu1"]
 [ext_resource type="PackedScene" uid="uid://dqlgiv2y6vt2x" path="res://Objects/spikes.tscn" id="4_4acey"]
 [ext_resource type="PackedScene" uid="uid://b7g3dkjvxv4px" path="res://Scenes/coffin.tscn" id="5_8rqab"]
-[ext_resource type="Texture2D" uid="uid://di0m81p7c5ain" path="res://Sprites/jap_wall.png" id="6_gad6u"]
-[ext_resource type="Texture2D" uid="uid://tufi10njx64e" path="res://Sprites/japanese_house.png" id="7_ugjic"]
+[ext_resource type="FontFile" uid="uid://dgptphts8sush" path="res://Fonts/Amarante-Regular.ttf" id="6_7pdwf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3p8t2"]
+font = ExtResource("6_7pdwf")
+font_size = 30
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Level1" type="Node2D"]
 position = Vector2(28, 162)
 
 [node name="Bg2" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(1800, -10)
 texture = ExtResource("1_7nddg")
 
 [node name="Bg3" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(5572, -10)
 scale = Vector2(-1, 1)
 texture = ExtResource("1_7nddg")
@@ -115,11 +122,23 @@ position = Vector2(5855, 35)
 position = Vector2(4046, -149)
 forceRight = true
 
-[node name="JapWall" type="Sprite2D" parent="."]
-position = Vector2(4898, 101)
-texture = ExtResource("6_gad6u")
+[node name="Label" type="Label" parent="."]
+offset_left = 677.0
+offset_top = -1.0
+offset_right = 989.0
+offset_bottom = 128.0
+text = "Use SPACE for jump or Spikes would kill you."
+label_settings = SubResource("LabelSettings_3p8t2")
+horizontal_alignment = 1
+autowrap_mode = 1
 
-[node name="JapaneseHouse" type="Sprite2D" parent="."]
-position = Vector2(4899, 42)
-scale = Vector2(1.32, 1)
-texture = ExtResource("7_ugjic")
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 2165.0
+offset_top = -135.0
+offset_right = 2477.0
+offset_bottom = -6.0
+text = "Use SPACE for jump or Spikes would kill you."
+label_settings = SubResource("LabelSettings_3p8t2")
+horizontal_alignment = 1
+autowrap_mode = 1
