@@ -41,7 +41,7 @@ func _physics_process(delta):
 			dash = true;
 			dashable = false
 		if dash == true:
-			velocity.x = direction * SPEED * 3
+			velocity.x = direction * SPEED * 4
 		else:	
 			velocity.x = direction * SPEED
 	else:
