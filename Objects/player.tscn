@@ -16,7 +16,8 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_2xwux")
 
 [node name="moon" parent="." instance=ExtResource("3_jks7l")]
-position = Vector2(784, -910)
+z_index = -1
+position = Vector2(200, -846)
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_v331d")]
 position = Vector2(-3.8147e-06, -7.62939e-06)
