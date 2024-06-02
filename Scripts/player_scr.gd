@@ -94,3 +94,5 @@ func checkArea():
 
 func _on_cooldown_timer_timeout():
 	dashable = true # Replace with function body.
+	
+

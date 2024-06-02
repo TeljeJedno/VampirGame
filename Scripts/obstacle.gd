@@ -15,3 +15,9 @@ func _process(delta):
 	#match name:
 		#"Stake":
 			#body.die()
+
+
+func _on_body_entered(body):
+	match body.name:
+		"Player":
+			body.queue_free()
